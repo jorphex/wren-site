@@ -112,20 +112,15 @@ a {
 
 .header-links a {
   display: grid;
-  width: 38px;
-  height: 38px;
+  width: 32px;
+  height: 32px;
   place-items: center;
   color: var(--wren-text-secondary);
-  border: 1px solid var(--wren-border-subtle);
-  border-radius: var(--wren-radius-md);
-  background: var(--wren-surface-card);
-  transition: color 120ms ease, border-color 120ms ease, background-color 120ms ease;
+  transition: color 120ms ease;
 }
 
 .header-links a:hover {
   color: var(--wren-text-primary);
-  border-color: var(--wren-border-default);
-  background: var(--wren-bg-elevated);
 }
 
 .header-links a:focus-visible {
