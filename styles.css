@@ -97,7 +97,6 @@ a {
   border-radius: var(--wren-radius-md);
 }
 
-.header-meta,
 .eyebrow {
   font-family: var(--wren-font-utility);
   font-size: 10px;
@@ -105,9 +104,36 @@ a {
   text-transform: uppercase;
 }
 
-.header-meta {
-  margin: 0;
+.header-links {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.header-links a {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
   color: var(--wren-text-muted);
+  border-radius: var(--wren-radius-md);
+  transition: color 120ms ease, background-color 120ms ease;
+}
+
+.header-links a:hover {
+  color: var(--wren-text-primary);
+  background: var(--wren-bg-elevated);
+}
+
+.header-links a:focus-visible {
+  outline: 2px solid var(--wren-accent-primary);
+  outline-offset: 2px;
+}
+
+.header-links svg {
+  width: 17px;
+  height: 17px;
+  fill: currentColor;
 }
 
 main {
@@ -249,10 +275,6 @@ h1 {
 
   .site-header {
     min-height: 70px;
-  }
-
-  .header-meta {
-    font-size: 9px;
   }
 
   main {
