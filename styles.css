@@ -97,13 +97,6 @@ a {
   border-radius: var(--wren-radius-md);
 }
 
-.eyebrow {
-  font-family: var(--wren-font-utility);
-  font-size: 10px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
-
 .header-links {
   display: flex;
   align-items: center;
@@ -192,20 +185,6 @@ main {
   width: min(50%, 470px);
 }
 
-.eyebrow {
-  margin: 0 0 var(--wren-space-8);
-  color: var(--wren-accent-primary-hover);
-}
-
-.eyebrow::after {
-  display: inline-block;
-  width: 48px;
-  height: 1px;
-  margin: 0 0 3px 14px;
-  content: "";
-  background: var(--wren-border-default);
-}
-
 h1 {
   margin: 0;
   color: var(--wren-text-primary);
@@ -288,11 +267,6 @@ h1 {
 
   .hero-copy {
     padding-top: 26px;
-  }
-
-  .eyebrow {
-    margin-bottom: 28px;
-    font-size: 9px;
   }
 
   h1 {
