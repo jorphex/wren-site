@@ -10,7 +10,7 @@ Wren is a desktop EVM wallet and signing firewall for browser dapps and native a
 
 Wren Companion connects browser dapps to Wren on the same computer. Companion carries browser requests. It is not a wallet or signer. Wren desktop remains responsible for permissions, review, signing, and broadcast.
 
-:::caution[Preview software]
+:::caution[Release candidate]
 
 Wren `0.1.0` and Wren Companion `0.1.0` are release candidates. They are not published releases until the matching release pages contain the artifacts, checksums, compatibility metadata, and source-bound attestations. Wren has no independent security audit. The current desktop release target is Linux x64. Use test accounts with no valuable assets while you evaluate a release.
 

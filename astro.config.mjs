@@ -3,6 +3,7 @@ import starlight from '@astrojs/starlight';
 
 export default defineConfig({
   site: 'https://getwren.xyz',
+  prefetch: false,
   integrations: [
     starlight({
       title: 'Wren',
