@@ -92,9 +92,8 @@ a {
 }
 
 .brand img {
-  width: 28px;
-  height: 28px;
-  border-radius: var(--wren-radius-md);
+  width: 34px;
+  height: 34px;
 }
 
 .header-links {
