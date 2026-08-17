@@ -89,4 +89,4 @@ Wren keeps the first endpoint row. You can add no more than five endpoint rows. 
 
 If the active endpoint fails, Wren can switch to the next enabled endpoint. Review the endpoint order and host before you rely on automatic failover.
 
-For method-level and local-provider behavior, read Wren's [RPC compatibility reference](https://github.com/jorphex/wren/blob/main/RPC_COMPATIBILITY.md). To manage account permissions before you change a route, see [Manage accounts and signers](accounts.md).
+For method-level and local-provider behavior, read Wren's [RPC compatibility reference](https://github.com/jorphex/wren/blob/main/RPC_COMPATIBILITY.md). To manage account permissions before you change a route, see [Manage accounts and signers](/docs/use-wren/accounts/).

@@ -14,6 +14,7 @@ export default defineConfig({
       },
       customCss: ['./src/styles/docs.css'],
       components: {
+        MobileMenuToggle: './src/components/MobileMenuToggle.astro',
         ThemeProvider: './src/components/DarkThemeProvider.astro',
         ThemeSelect: './src/components/DarkThemeSelect.astro',
       },

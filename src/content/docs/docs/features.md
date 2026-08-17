@@ -47,7 +47,7 @@ Open **Control center** → **Connected apps** to review retained access and def
 
 ![Two apps use Wren at the same time. Each app has a separate account permission and network route. There is no shared network switch.](../../../assets/docs/wren-per-app-routes.svg)
 
-See [Manage accounts and addresses](use-wren/accounts.md) and [Manage networks and RPC endpoints](use-wren/networks.md) for the related controls.
+See [Manage accounts and addresses](/docs/use-wren/accounts/) and [Manage networks and RPC endpoints](/docs/use-wren/networks/) for the related controls.
 
 ## Wren Companion
 
@@ -93,7 +93,7 @@ Wren stores contacts locally. A saved contact name can appear during request rev
 
 The current **Earn** surface provides a local, allowlisted Yearn catalog on Ethereum, Base, and Katana. It can show positions and run bounded deposit, withdraw, approval, and revoke workflows. A watch-only account can inspect positions but cannot transact. Yearn vaults still have smart-contract and strategy risk. Use the exact [Yearn Earn boundary](https://github.com/jorphex/wren/blob/main/YEARN_EARN.md) for supported products and workflow evidence.
 
-See [Manage tokens](use-wren/tokens.md) and [Use Earn](use-wren/earn.md) for task instructions.
+See [Manage tokens](/docs/use-wren/tokens/) and [Use Earn](/docs/use-wren/earn/) for task instructions.
 
 ## Backups and profile import
 
@@ -101,7 +101,7 @@ Open **Settings** → **Recovery** to use **Export encrypted backup** or **Resto
 
 Inspect a backup before you replace the current profile. Test restoration with non-valuable accounts. Keep the backup separate from the computer that runs Wren.
 
-Wren also supports a one-time **Import a Frame profile** flow. It copies validated configuration and encrypted signer files through private staging. It does not read or change the active Frame profile. Use the [installation tutorial](getting-started/install.md#import-a-frame-profile) for the required order and checks.
+Wren also supports a one-time **Import a Frame profile** flow. It copies validated configuration and encrypted signer files through private staging. It does not read or change the active Frame profile. Use the [installation tutorial](/docs/getting-started/install/#import-a-frame-profile) for the required order and checks.
 
 ## Current unsupported boundary
 

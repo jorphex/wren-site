@@ -57,7 +57,7 @@ Each paired browser appears with its browser name, extension ID, and pairing fin
 2. Select **Revoke**.
 3. Select **Confirm revoke**.
 
-Revocation disconnects that Companion pairing. A new pairing code is required to connect it again. See [Install and pair Wren Companion](../getting-started/companion.md) for the pairing boundary.
+Revocation disconnects that Companion pairing. A new pairing code is required to connect it again. See [Install and pair Wren Companion](/docs/getting-started/companion/) for the pairing boundary.
 
 ## Local connections
 

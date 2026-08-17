@@ -18,14 +18,14 @@ Wren `0.1.0` and Wren Companion `0.1.0` are published releases. Wren has no inde
 
 ## Start with your task
 
-- Read [Wren features and boundaries](features.md) to understand the current product scope.
-- [Install and start Wren](getting-started/install.md) on Linux x64. Verify the package before you run it.
-- [Complete Wren onboarding](getting-started/onboarding.md) and add a test or watch-only account.
-- [Install and pair Wren Companion](getting-started/companion.md) when you need browser dapps. Compare the six-digit code in Companion and Wren before you accept the pairing request.
+- Read [Wren features and boundaries](/docs/features/) to understand the current product scope.
+- [Install and start Wren](/docs/getting-started/install/) on Linux x64. Verify the package before you run it.
+- [Complete Wren onboarding](/docs/getting-started/onboarding/) and add a test or watch-only account.
+- [Install and pair Wren Companion](/docs/getting-started/companion/) when you need browser dapps. Compare the six-digit code in Companion and Wren before you accept the pairing request.
 - Use Wren's local provider for a native application that supports it. Companion is not required.
-- [Import a Frame profile](getting-started/install.md#import-a-frame-profile) when you need a one-time private copy of an existing profile. Wren does not read Frame's live profile by default.
+- [Import a Frame profile](/docs/getting-started/install/#import-a-frame-profile) when you need a one-time private copy of an existing profile. Wren does not read Frame's live profile by default.
 
-After setup, open **Control center**. You can manage [accounts](use-wren/accounts.md), [networks](use-wren/networks.md), [tokens](use-wren/tokens.md), [Earn](use-wren/earn.md), and [settings](use-wren/settings.md).
+After setup, open **Control center**. You can manage [accounts](/docs/use-wren/accounts/), [networks](/docs/use-wren/networks/), [tokens](/docs/use-wren/tokens/), [Earn](/docs/use-wren/earn/), and [settings](/docs/use-wren/settings/).
 
 Review the requesting app, account, network, and request details before you approve them.
 
@@ -39,7 +39,7 @@ Review the requesting app, account, network, and request details before you appr
 
 ![Browser dapps reach Wren through Companion. Native apps connect directly. Wren reviews each request before the signer or network acts.](../../../assets/docs/wren-request-flow.svg)
 
-Read [Wren features and boundaries](features.md) before you rely on a feature or signer.
+Read [Wren features and boundaries](/docs/features/) before you rely on a feature or signer.
 
 ## Safety baseline
 

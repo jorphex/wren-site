@@ -76,7 +76,7 @@ Connected-app access is stored per account. It does not grant access to every ac
 4. Use the **Access for `<origin>`** toggle to revoke or restore access for that account.
 5. Select **Clear all permissions** when you want to remove every listed app permission for the account.
 
-Revocation affects future requests for that account. It does not delete the account or its signer. Review the app's network route separately in [Manage networks](networks.md).
+Revocation affects future requests for that account. It does not delete the account or its signer. Review the app's network route separately in [Manage networks](/docs/use-wren/networks/).
 
 ## Unlock or remove a signer
 
@@ -91,4 +91,4 @@ To remove one account, open that account's **Settings** module and select **Remo
 
 To remove a signer, open the signer card and select **Remove signer**. Read **Remove signer?**, then select **Remove signer**. Accounts that use the signer become watch-only. This action removes signing access from Wren; it does not move funds or destroy the underlying hardware or recovery material.
 
-If you must change derivation settings, use [Settings](settings.md) → **Accounts and signing**. Check each displayed address after the change.
+If you must change derivation settings, use [Settings](/docs/use-wren/settings/) → **Accounts and signing**. Check each displayed address after the change.

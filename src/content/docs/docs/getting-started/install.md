@@ -98,7 +98,7 @@ Wren copies only validated `config.json` and encrypted signer files. It refuses 
 
 ## Complete first launch
 
-Select **Get started** on the welcome screen. Then follow [Complete Wren onboarding](onboarding.md).
+Select **Get started** on the welcome screen. Then follow [Complete Wren onboarding](/docs/getting-started/onboarding/).
 
 The tutorial helps you set the wallet shortcut, enable networks, add an account, and understand Companion. Select **Open Wren** to open the **Control center**.
 
@@ -124,4 +124,4 @@ After configuring accounts and networks, open **Settings**, find **Recovery**, a
 
 Wren cannot recover the backup password. Inspect and test restoration with non-valuable accounts before depending on the backup.
 
-Wren is now ready for local tools. To use browser dapps, continue with [Install and pair Wren Companion](companion.md).
+Wren is now ready for local tools. To use browser dapps, continue with [Install and pair Wren Companion](/docs/getting-started/companion/).

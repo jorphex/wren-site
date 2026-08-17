@@ -18,7 +18,7 @@ Download Wren Companion `0.1.0` only from the official release. Verify the archi
 
 ## Before you begin
 
-- [Install and start Wren](install.md), and keep the desktop application running.
+- [Install and start Wren](/docs/getting-started/install/), and keep the desktop application running.
 - Use a current Chrome, Brave, or Firefox browser.
 - Use a disposable browser profile and a test-only wallet account for the first connection.
 - Remove or disable another extension that claims to be Wren; do not pair an archive from an unofficial location.

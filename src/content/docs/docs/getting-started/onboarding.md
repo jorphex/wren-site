@@ -25,7 +25,7 @@ Wren can use one keyboard shortcut to show or hide the wallet.
 2. Press it again to show Wren after it hides.
 3. Select **Next** after the shortcut works, or select **Skip shortcut**.
 
-Wren can hide automatically when it loses focus. You can change this behavior later in [Settings](../use-wren/settings.md).
+Wren can hide automatically when it loses focus. You can change this behavior later in [Settings](/docs/use-wren/settings/).
 
 ## 2. Choose your networks
 
@@ -59,13 +59,13 @@ Enter a recovery phrase or private key only in Wren's account setup. Wren Compan
 
 ## 5. Connect browser dapps
 
-[Wren Companion](companion.md) routes browser requests to Wren on the same computer. Companion is not a wallet or signer.
+[Wren Companion](/docs/getting-started/companion/) routes browser requests to Wren on the same computer. Companion is not a wallet or signer.
 
 1. Select **Chrome** or **Firefox** to open the Companion release downloads, or install Companion later.
 2. Review and approve or reject each browser request in Wren.
 3. Select **Next**.
 
-Complete [Install and pair Wren Companion](companion.md) before you connect a browser dapp.
+Complete [Install and pair Wren Companion](/docs/getting-started/companion/) before you connect a browser dapp.
 
 ## 6. Check the dapp network
 
@@ -82,6 +82,6 @@ The final screen says **Ready to begin**.
 1. Review the reminder to review each request before anything is signed.
 2. Select **Open Wren**.
 
-Wren closes the tutorial and opens the **Control center**. From there, you can manage **Accounts**, **Networks**, **Connected apps**, **Tokens**, and **Settings**. Wren is ready for local tools. Use [Wren Companion](companion.md) when a browser dapp needs a browser wallet.
+Wren closes the tutorial and opens the **Control center**. From there, you can manage **Accounts**, **Networks**, **Connected apps**, **Tokens**, and **Settings**. Wren is ready for local tools. Use [Wren Companion](/docs/getting-started/companion/) when a browser dapp needs a browser wallet.
 
 ![The Wren Control center after onboarding, with Accounts, Networks, Connected apps, Tokens, Earn, and Settings.](../../../../assets/docs/wren-control-center.png)
