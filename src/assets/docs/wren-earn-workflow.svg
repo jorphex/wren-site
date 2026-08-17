@@ -10,13 +10,13 @@
     </marker>
     <style>
       .node { fill: #141a16; stroke: #3d493f; stroke-width: 1; }
-      .decision { fill: #181711; stroke: #a68a61; stroke-width: 1.5; }
+      .decision { fill: #29231b; stroke: #a68a61; stroke-width: 1.5; }
       .route { fill: none; stroke: #89958b; stroke-width: 1.5; marker-end: url(#arrow); }
       .authority { fill: none; stroke: #a68a61; stroke-width: 2; marker-end: url(#arrow-accent); }
       .branch { fill: none; stroke: #89958b; stroke-width: 1; stroke-dasharray: 4 4; marker-end: url(#arrow); }
       .label { fill: #f2f4ef; font: 600 13px Recursive, MainFont, sans-serif; text-anchor: middle; }
       .detail { fill: #a9b3aa; font: 400 10px Recursive, MainFont, sans-serif; text-anchor: middle; }
-      .accent { fill: #f0dec0; }
+      .accent { fill: #b79a70; }
     </style>
   </defs>
 

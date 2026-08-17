@@ -18,7 +18,7 @@ Check the [Wren releases](https://github.com/jorphex/wren/releases) and [Compani
 
 ## Desktop approval and signing
 
-Wren desktop receives requests from browser dapps, native applications, and command-line tools. It reviews and handles supported requests in one desktop interface.
+Wren desktop receives requests from browser dapps and native applications. It reviews and handles supported requests in one desktop interface.
 
 Wren can review:
 
