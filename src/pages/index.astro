@@ -210,12 +210,44 @@ import "../styles/landing.css";
           <img src="/assets/wren-mark.svg" alt="" />
           <span><strong>wren</strong> · A community-maintained continuation of Frame wallet · GNU GPL v3.0</span>
         </div>
-        <nav class="footer-links" aria-label="Footer navigation">
-          <a href="https://github.com/jorphex/wren/releases" target="_blank" rel="noopener noreferrer">Releases</a>
-          <a href="/docs/">Docs</a>
-          <a href="https://github.com/jorphex/wren" target="_blank" rel="noopener noreferrer">GitHub</a>
-          <a href="https://x.com/jxyhelper" target="_blank" rel="noopener noreferrer">X</a>
-        </nav>
+        <div class="footer-actions">
+          <div
+            class="footer-support"
+            data-footer-support
+            data-support-address="0x6ac7F5A89E2eC6c30Aa687F9f2117bA1E31D0D97"
+          >
+            <button
+              class="footer-support-toggle"
+              type="button"
+              aria-expanded="false"
+              aria-controls="footer-support-panel"
+            >Support wren</button>
+            <div
+              class="footer-support-panel"
+              id="footer-support-panel"
+              role="group"
+              aria-label="Support Wren"
+              hidden
+            >
+              <p>EVM donation address</p>
+              <img
+                src="/assets/wren-tip-qr.svg"
+                alt="QR code for the Wren donation address."
+                width="148"
+                height="148"
+              />
+              <code>0x6ac7F5A89E2eC6c30Aa687F9f2117bA1E31D0D97</code>
+              <button class="footer-support-copy" type="button" data-copy-address>Copy address</button>
+              <span class="sr-only" aria-live="polite" data-copy-status></span>
+            </div>
+          </div>
+          <nav class="footer-links" aria-label="Footer navigation">
+            <a href="https://github.com/jorphex/wren/releases" target="_blank" rel="noopener noreferrer">Releases</a>
+            <a href="/docs/">Docs</a>
+            <a href="https://github.com/jorphex/wren" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://x.com/jxyhelper" target="_blank" rel="noopener noreferrer">X</a>
+          </nav>
+        </div>
       </div>
     </footer>
 
@@ -245,6 +277,54 @@ import "../styles/landing.css";
 
         document.querySelectorAll("[data-platform-release-label]").forEach((label) => {
           label.textContent = release.label;
+        });
+      })();
+    </script>
+    <script is:inline>
+      (() => {
+        const support = document.querySelector("[data-footer-support]");
+        const toggle = support?.querySelector(".footer-support-toggle");
+        const panel = support?.querySelector(".footer-support-panel");
+        const copyButton = support?.querySelector("[data-copy-address]");
+        const status = support?.querySelector("[data-copy-status]");
+        const address = support?.dataset.supportAddress;
+
+        if (!support || !toggle || !panel || !copyButton || !status || !address) return;
+
+        const setOpen = (open) => {
+          toggle.setAttribute("aria-expanded", String(open));
+          panel.hidden = !open;
+        };
+
+        toggle.addEventListener("click", () => {
+          setOpen(toggle.getAttribute("aria-expanded") !== "true");
+        });
+
+        document.addEventListener("click", (event) => {
+          if (!support.contains(event.target)) setOpen(false);
+        });
+
+        document.addEventListener("keydown", (event) => {
+          if (event.key === "Escape" && toggle.getAttribute("aria-expanded") === "true") {
+            setOpen(false);
+            toggle.focus();
+          }
+        });
+
+        copyButton.addEventListener("click", async () => {
+          try {
+            await navigator.clipboard.writeText(address);
+            copyButton.textContent = "Copied";
+            status.textContent = "Donation address copied.";
+          } catch {
+            copyButton.textContent = "Copy failed";
+            status.textContent = "Copy failed. Select the address and copy it manually.";
+          }
+
+          window.setTimeout(() => {
+            copyButton.textContent = "Copy address";
+            status.textContent = "";
+          }, 1500);
         });
       })();
     </script>
