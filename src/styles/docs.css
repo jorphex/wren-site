@@ -1,0 +1,81 @@
+@font-face {
+  font-family: "Wren Recursive";
+  src: url("/assets/recursive.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 300 1000;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Wren Mono";
+  src: url("/assets/fira-code-regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+:root {
+  color-scheme: dark;
+  --sl-font: "Wren Recursive", sans-serif;
+  --sl-font-mono: "Wren Mono", monospace;
+  --sl-content-width: 48rem;
+  --sl-color-accent-low: #2c261d;
+  --sl-color-accent: #b79a70;
+  --sl-color-accent-high: #ead9c1;
+  --sl-color-white: #f2f4ef;
+  --sl-color-gray-1: #d0d6ce;
+  --sl-color-gray-2: #a9b3aa;
+  --sl-color-gray-3: #89958b;
+  --sl-color-gray-4: #5f6b61;
+  --sl-color-gray-5: #3d493f;
+  --sl-color-gray-6: #202822;
+  --sl-color-black: #090c0a;
+}
+
+body {
+  font-variation-settings: "CASL" 0.03, "CRSV" 0;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-variation-settings: "CASL" 0.28, "CRSV" 0;
+}
+
+.site-title {
+  font-variation-settings: "CASL" 0.45, "CRSV" 0.12;
+}
+
+.starlight-aside {
+  border-inline-start: 0;
+}
+
+#starlight__sidebar a[aria-current='page'],
+.pagination-links a {
+  border-radius: 0;
+}
+
+.sl-markdown-content img {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  margin-inline: auto;
+}
+
+.sl-markdown-content img[src*='wren-request-flow'],
+.sl-markdown-content img[src*='wren-per-app-routes'],
+.sl-markdown-content img[src*='wren-earn-workflow'] {
+  max-width: 420px;
+}
+
+.sl-markdown-content img[src*='wren-control-center'],
+.sl-markdown-content img[src*='wren-network-editor'] {
+  border: 1px solid var(--sl-color-gray-5);
+  border-radius: 0;
+}
+
+.sl-markdown-content table {
+  display: table;
+  width: 100%;
+}

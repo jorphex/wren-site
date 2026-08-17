@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 310" role="img" aria-labelledby="title description">
+  <title id="title">Per-app account and network routes</title>
+  <desc id="description">Two apps use Wren at the same time. Each app has a separate account permission and network route.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 8 4 L 0 8 Z" fill="#89958b" />
+    </marker>
+    <style>
+      .boundary { fill: #0e1210; stroke: #3d493f; stroke-width: 1; }
+      .node { fill: #141a16; stroke: #3d493f; stroke-width: 1; }
+      .permission { fill: #181711; stroke: #a68a61; stroke-width: 1.5; }
+      .route { fill: none; stroke: #89958b; stroke-width: 1.5; marker-end: url(#arrow); }
+      .label { fill: #f2f4ef; font: 600 12px Recursive, MainFont, sans-serif; text-anchor: middle; }
+      .detail { fill: #a9b3aa; font: 400 10px Recursive, MainFont, sans-serif; text-anchor: middle; }
+      .boundary-label { fill: #d0d6ce; font: 600 12px Recursive, MainFont, sans-serif; text-anchor: middle; }
+      .accent { fill: #f0dec0; }
+    </style>
+  </defs>
+
+  <rect class="boundary" x="102" y="10" width="156" height="290" />
+  <text class="boundary-label" x="180" y="34">Wren desktop</text>
+
+  <path class="route" d="M 90 90 H 116" />
+  <path class="route" d="M 244 90 H 270" />
+  <path class="route" d="M 90 230 H 116" />
+  <path class="route" d="M 244 230 H 270" />
+
+  <rect class="node" x="10" y="62" width="80" height="56" />
+  <text class="label" x="50" y="94">Dapp A</text>
+
+  <rect class="permission" x="116" y="50" width="128" height="80" />
+  <text class="label accent" x="180" y="77">Permission A</text>
+  <text class="detail" x="180" y="97">Account …1234</text>
+  <text class="detail" x="180" y="114">Base route</text>
+
+  <rect class="node" x="270" y="62" width="80" height="56" />
+  <text class="label" x="310" y="94">Base</text>
+
+  <line x1="120" y1="155" x2="240" y2="155" stroke="#2b352d" />
+  <text class="detail" x="180" y="174">No shared route</text>
+
+  <rect class="node" x="10" y="202" width="80" height="56" />
+  <text class="label" x="50" y="234">Local app</text>
+
+  <rect class="permission" x="116" y="190" width="128" height="80" />
+  <text class="label accent" x="180" y="217">Permission B</text>
+  <text class="detail" x="180" y="237">Account …abcd</text>
+  <text class="detail" x="180" y="254">Ethereum route</text>
+
+  <rect class="node" x="270" y="202" width="80" height="56" />
+  <text class="label" x="310" y="234">Ethereum</text>
+</svg>

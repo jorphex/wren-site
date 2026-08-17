@@ -1,3 +1,7 @@
+---
+import "../styles/landing.css";
+---
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -35,19 +39,19 @@
 
     <title>Wren | Desktop wallet</title>
     <link rel="canonical" href="https://getwren.xyz/" />
-    <link rel="icon" href="assets/wren-favicon-32.png" type="image/png" sizes="32x32" />
-    <link rel="apple-touch-icon" href="assets/wren-apple-touch-icon-180.png" />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="/assets/wren-favicon-32.png" type="image/png" sizes="32x32" />
+    <link rel="apple-touch-icon" href="/assets/wren-apple-touch-icon-180.png" />
   </head>
   <body>
     <div class="site-shell">
       <header class="site-header">
-        <a class="brand" href="#top" aria-label="Wren home">
-          <img src="assets/wren-mark.svg" alt="" />
+        <a class="brand" href="/" aria-label="Wren home">
+          <img src="/assets/wren-mark.svg" alt="" />
           <span>wren</span>
         </a>
 
-        <nav class="header-links" aria-label="Wren on the web">
+        <nav class="header-links" aria-label="Primary navigation">
+          <a class="docs-link" href="/docs/">Docs</a>
           <a
             href="https://github.com/jorphex/wren"
             target="_blank"
@@ -76,7 +80,7 @@
       <main id="top">
         <section class="hero" aria-labelledby="hero-title">
           <div class="hero-scene" aria-hidden="true">
-            <img src="assets/wren-garden.png" alt="" />
+            <img src="/assets/wren-garden.png" alt="" />
           </div>
 
           <div class="hero-copy">
@@ -85,8 +89,7 @@
               A desktop EVM wallet and<br class="intro-break-mobile" /> signing
               firewall<br class="intro-break-desktop" /> for browsers,<br
                 class="intro-break-mobile"
-              />
-              native apps, and CLI tools.
+              />{" "}native apps, and CLI tools.
             </p>
           </div>
         </section>

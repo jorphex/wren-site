@@ -2,3 +2,10 @@
 PLAN.md
 NOTES.md
 DESIGN.md
+DOCS_IA.md
+DOCS_MEDIA.md
+
+# Astro build and local dependencies
+.astro/
+dist/
+node_modules/
