@@ -8,11 +8,11 @@ sidebar:
 
 This page explains Wren's product boundary. It does not replace the exact protocol and qualification documents in the [Wren repository](https://github.com/jorphex/wren).
 
-:::caution[Release candidate]
+:::caution[Security status]
 
-Wren `0.1.0` and Wren Companion `0.1.0` are release candidates, not published releases. Wren has no independent security audit. The current desktop release target is Linux x64. Use test accounts with no valuable assets until you have evaluated a published release for yourself.
+Wren `0.1.0` and Wren Companion `0.1.0` are published releases. Wren has no independent security audit. The current desktop release target is Linux x64. Use test accounts with no valuable assets until you have evaluated the releases for yourself.
 
-Check the [Wren releases](https://github.com/jorphex/wren/releases) and [Companion releases](https://github.com/jorphex/wren-companion/releases) for the matching artifacts, checksums, compatibility metadata, and source-bound attestations.
+Check the [Wren release](https://github.com/jorphex/wren/releases/tag/v0.1.0) and [Companion release](https://github.com/jorphex/wren-companion/releases/tag/v0.1.0) for the matching artifacts, checksums, compatibility metadata, and source-bound attestations.
 
 :::
 

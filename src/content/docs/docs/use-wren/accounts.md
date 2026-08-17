@@ -8,9 +8,9 @@ sidebar:
 
 Use **Control center** → **Accounts** to add and manage accounts. Wren keeps an account record separate from its signer record. A signer can expose several addresses, and you add each address as an account before you use it.
 
-:::caution[Release candidate]
+:::caution[Security status]
 
-Wren `0.1.0` is a release candidate and has no independent security audit. Use test accounts with no valuable assets while you evaluate it. Review the current [signer and platform support](https://github.com/jorphex/wren/blob/main/HARDWARE_SUPPORT.md) before you rely on a hardware signer.
+Wren `0.1.0` has no independent security audit. Use test accounts with no valuable assets while you evaluate it. Review the current [signer and platform support](https://github.com/jorphex/wren/blob/main/HARDWARE_SUPPORT.md) before you rely on a hardware signer.
 
 :::
 

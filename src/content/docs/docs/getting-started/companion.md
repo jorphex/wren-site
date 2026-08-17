@@ -10,9 +10,9 @@ Wren Companion lets browser dapps request accounts, permissions, networks, and s
 
 Companion is not a wallet or signer. It does not need your recovery phrase, private key, keystore password, or hardware-wallet PIN.
 
-:::caution[No published download yet]
+:::caution[Verify the release]
 
-Wren Companion `0.1.0` is still a release candidate. Install it only after its release page contains the browser archives, checksums, compatibility metadata, and source-bound attestations described below.
+Download Wren Companion `0.1.0` only from the official release. Verify the archive, checksum, compatibility metadata, and GitHub artifact attestation before installation.
 
 :::
 
@@ -25,7 +25,7 @@ Wren Companion `0.1.0` is still a release candidate. Install it only after its r
 
 ## Download the correct browser archive
 
-When `v0.1.0` is published, open the [Wren Companion releases page](https://github.com/jorphex/wren-companion/releases) and download:
+Open the [Wren Companion `v0.1.0` release](https://github.com/jorphex/wren-companion/releases/tag/v0.1.0) and download:
 
 - `wren-companion-0.1.0-chrome.zip` for Chrome or Brave; or
 - `wren-companion-0.1.0-firefox.zip` for Firefox;

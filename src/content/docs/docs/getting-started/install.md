@@ -8,9 +8,9 @@ sidebar:
 
 This tutorial takes you from a verified Linux package to a running Wren wallet with a first test account.
 
-:::caution[No published download yet]
+:::caution[Verify the release]
 
-Wren `0.1.0` is still a release candidate. Do not treat a source build, workflow artifact, draft, or package from another location as a published Wren release. This page is ready for the release but there is currently nothing to install from it.
+Download Wren `0.1.0` only from the official release. Verify the checksum and GitHub artifact attestation before you run a package. The packages are unsigned.
 
 :::
 
@@ -29,7 +29,7 @@ If you intend to import an existing Frame profile, read [Import a Frame profile]
 
 ## Download and verify Wren
 
-When `v0.1.0` is published, open the [Wren releases page](https://github.com/jorphex/wren/releases) and download:
+Open the [Wren `v0.1.0` release](https://github.com/jorphex/wren/releases/tag/v0.1.0) and download:
 
 - `Wren-0.1.0.AppImage` for a portable application; or
 - `wren_0.1.0_amd64.deb` for a system installation;
