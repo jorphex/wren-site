@@ -203,6 +203,10 @@ h1 {
   line-height: 1.55;
 }
 
+.intro-break-mobile {
+  display: none;
+}
+
 @media (max-width: 800px) {
   main {
     padding: var(--wren-space-8) 0 var(--wren-space-12);
@@ -276,6 +280,14 @@ h1 {
     max-width: 330px;
     margin-top: 34px;
     font-size: 15px;
+  }
+
+  .intro-break-desktop {
+    display: none;
+  }
+
+  .intro-break-mobile {
+    display: initial;
   }
 
   .hero-scene img {
