@@ -30,7 +30,7 @@ Use these controls for the desktop window and its notifications.
 | **Run on startup** | Start Wren when you sign in. |
 | **Reveal from screen edge** | Show Wren when the pointer rests at the selected display edge. |
 | **Wallet side** | Select **Right** or **Left** for the edge that reveals Wren and the side where it appears. |
-| **Display gas in menu bar** | On macOS builds, show the mainnet gas price in the menu bar. macOS is not a qualified `0.1.0` release target. |
+| **Display gas in menu bar** | On macOS builds, show the mainnet gas price in the menu bar. macOS is not a qualified release target. |
 
 Wren shows **Wallet activity notifications** only when the operating system supports notifications, Wren is hidden, and the setting is enabled. The updates report confirmed, failed, replaced, or still-pending submitted wallet activity. Select a notification to open that activity in Wren.
 

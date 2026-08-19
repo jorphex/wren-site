@@ -10,9 +10,9 @@ This page explains Wren's product boundary. It does not replace the exact protoc
 
 :::caution[Security status]
 
-Wren `0.1.0` and Wren Companion `0.1.0` are published releases. Wren has no independent security audit. The current desktop release target is Linux x64. Use test accounts with no valuable assets until you have evaluated the releases for yourself.
+Wren `0.1.2` and Wren Companion `0.1.1` are published releases. Wren has no independent security audit. The current desktop release target is Linux x64. Use test accounts with no valuable assets until you have evaluated the releases for yourself.
 
-Check the [Wren release](https://github.com/jorphex/wren/releases/tag/v0.1.0) and [Companion release](https://github.com/jorphex/wren-companion/releases/tag/v0.1.0) for the matching artifacts, checksums, compatibility metadata, and source-bound attestations.
+Check the [Wren 0.1.2 release](https://github.com/jorphex/wren/releases/tag/v0.1.2) and [Companion 0.1.1 release](https://github.com/jorphex/wren-companion/releases/tag/v0.1.1) for the artifacts, checksums, compatibility metadata, and source-bound attestations.
 
 :::
 
@@ -55,7 +55,7 @@ Wren Companion injects Wren's EIP-1193 provider into supported browser pages and
 
 Companion is not a wallet, signer, or approval authority. It does not need a recovery phrase, private key, keystore password, or hardware-wallet PIN. Wren desktop keeps the account permission, review, signing, and broadcast authority.
 
-Companion `0.1.0` uses mutually authenticated protocol 3. During setup, **Pair this Companion** shows a six-digit code. Compare it with the code in Wren before you select **Accept**. Select **Decline** for an unexpected request or a code mismatch. Matching codes authenticate the installations. They do not make a compromised computer or browser profile safe.
+Companion `0.1.1` uses mutually authenticated protocol 3. During setup, **Pair this Companion** shows a six-digit code. Compare it with the code in Wren before you select **Accept**. Select **Decline** for an unexpected request or a code mismatch. Matching codes authenticate the installations. They do not make a compromised computer or browser profile safe.
 
 Companion shows **Wren is unavailable** when it cannot reach the desktop. It shows **Update Wren** when the versions do not match. It shows **Wren identity changed** when the saved desktop identity changes.
 
@@ -71,7 +71,7 @@ From **Control center** → **Accounts**, select **Add New Account**. **Choose a
 - **Local accounts:** **Seed phrase**, **Private key**, and **Keystore file (JSON)**. Wren stores local signer data in encrypted signer workers.
 - **Watch-only:** **Watch account**. It can monitor an address but cannot sign.
 
-The release target is Linux x64. Trezor Safe 7 and Trezor Model One have current physical evidence on Linux x64, with documented Model One limitations. Ledger and GridPlus Lattice1 have implemented paths and automated coverage, but they were not physically requalified for `0.1.0`. Other Trezor models share implementation and automated bridge coverage but were not physically requalified. Trezor Safe 7 Bluetooth is unsupported.
+The release target is Linux x64. Trezor Safe 7 and Trezor Model One have current physical evidence on Linux x64, with documented Model One limitations. Ledger and GridPlus Lattice1 have implemented paths and automated coverage, but they have not been physically requalified. Other Trezor models share implementation and automated bridge coverage but have not been physically requalified. Trezor Safe 7 Bluetooth is unsupported.
 
 These labels describe project evidence. They are not security certification. Review [Signer and platform support](https://github.com/jorphex/wren/blob/main/HARDWARE_SUPPORT.md) before you rely on a signer.
 

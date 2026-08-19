@@ -12,13 +12,14 @@ Wren Companion connects browser dapps to Wren on the same computer. Companion ca
 
 :::caution[Security status]
 
-Wren `0.1.0` and Wren Companion `0.1.0` are published releases. Wren has no independent security audit. The current desktop release target is Linux x64. Use test accounts with no valuable assets while you evaluate the releases.
+Wren `0.1.2` and Wren Companion `0.1.1` are published releases. Wren has no independent security audit. The current desktop release target is Linux x64. Use test accounts with no valuable assets while you evaluate the releases.
 
 :::
 
 ## Start with your task
 
 - Read [Wren features and boundaries](/docs/features/) to understand the current product scope.
+- Read the [release notes](/docs/release-notes/) before you update Wren or Companion.
 - [Install and start Wren](/docs/getting-started/install/) on Linux x64. Verify the package before you run it.
 - [Complete Wren onboarding](/docs/getting-started/onboarding/) and add a test or watch-only account.
 - [Install and pair Wren Companion](/docs/getting-started/companion/) when you need browser dapps. Compare the six-digit code in Companion and Wren before you accept the pairing request.
