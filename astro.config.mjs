@@ -28,6 +28,7 @@ export default defineConfig({
       sidebar: [
         { slug: 'docs' },
         { slug: 'docs/features' },
+        { slug: 'docs/release-notes' },
         {
           label: 'Get started',
           items: [
