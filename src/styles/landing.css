@@ -438,6 +438,40 @@ h2 {
   justify-content: flex-end;
 }
 
+.latest-commits {
+  width: min(100% - 48px, var(--content));
+  margin-inline: auto;
+  display: flex;
+  justify-content: center;
+  gap: 9px;
+  padding: 0 0 12px;
+  color: var(--text-muted);
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.latest-commit-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 9px;
+}
+
+.latest-commits a {
+  color: var(--text-tertiary);
+  text-decoration-color: var(--border);
+  text-underline-offset: 3px;
+  white-space: nowrap;
+}
+
+.latest-commits a:hover {
+  color: var(--text);
+}
+
+.latest-commit-separator {
+  color: var(--border);
+}
+
 footer {
   background: transparent;
 }
@@ -664,8 +698,19 @@ footer {
   .header-inner,
   .content,
   .hero-inner,
+  .latest-commits,
   .footer-inner {
     width: min(100% - 32px, var(--content));
+  }
+
+  .latest-commits {
+    align-items: center;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .latest-commit-separator {
+    display: none;
   }
 
   .site-header,
