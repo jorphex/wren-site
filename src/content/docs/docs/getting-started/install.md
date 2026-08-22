@@ -1,16 +1,16 @@
 ---
 title: Install and start Wren
-description: Verify and install Wren on Linux x64, complete first launch, and add a test account.
+description: Verify and install Wren on Linux x64 or evaluate the Windows x64 preview, then complete first launch and add a test account.
 sidebar:
   label: Install and start Wren
   order: 2
 ---
 
-This tutorial takes you from a verified Linux package to a running Wren wallet with a first test account.
+This tutorial takes you from a verified Wren package to a running wallet with a first test account. Linux x64 is the qualified desktop target. Windows x64 is available as an unsigned, unqualified preview for local testing.
 
 :::caution[Verify the release]
 
-Download Wren `0.1.2` only from the official release. Verify the checksum and GitHub artifact attestation before you run a package. The packages are unsigned.
+Download Wren `0.1.3` only from the official release. Verify the checksum and GitHub artifact attestation before you run a package. The Linux packages and Windows preview are unsigned. A checksum does not create a trusted publisher.
 
 :::
 
@@ -18,8 +18,8 @@ Download Wren `0.1.2` only from the official release. Verify the checksum and Gi
 
 You need:
 
-- a Linux x64 system;
-- a terminal and permission to install or run local applications;
+- a Linux x64 system for the qualified release, or a Windows x64 system for the unqualified preview;
+- a terminal or PowerShell and permission to install or run local applications;
 - a test account that holds no valuable assets, or an address to add as watch-only;
 - an optional supported hardware wallet connected over USB.
 
@@ -29,35 +29,52 @@ If you intend to import an existing Frame profile, read [Import a Frame profile]
 
 ## Download and verify Wren
 
-Open the [Wren `v0.1.2` release](https://github.com/jorphex/wren/releases/tag/v0.1.2) and download:
+Open the [Wren `v0.1.3` release](https://github.com/jorphex/wren/releases/tag/v0.1.3) and download:
 
-- `Wren-0.1.2.AppImage` for a portable application; or
-- `wren_0.1.2_amd64.deb` for a system installation;
+- `Wren-0.1.3.AppImage` for a portable Linux application;
+- `wren_0.1.3_amd64.deb` for a Linux system installation; or
+- `Wren-Setup-0.1.3-unsigned-x64.exe` for the Windows x64 preview;
 - `SHA256SUMS` from the same release.
+
+### Verify a Linux package
 
 Keep the package and checksum file in the same directory. Calculate the package hash:
 
 ```bash
-sha256sum Wren-0.1.2.AppImage
+sha256sum Wren-0.1.3.AppImage
 ```
 
 For the deb package, use:
 
 ```bash
-sha256sum wren_0.1.2_amd64.deb
+sha256sum wren_0.1.3_amd64.deb
 ```
 
 The calculated hash must exactly match that package's entry in `SHA256SUMS`. Also inspect the GitHub artifact attestation attached to the release. Stop if a name, hash, release version, repository, or attested source commit does not match.
 
-The packages are currently unsigned. A successful installation prompt is not a substitute for verifying the release.
+The packages are unsigned. A successful installation prompt is not a substitute for verifying the release.
+
+### Verify the Windows preview
+
+Keep `Wren-Setup-0.1.3-unsigned-x64.exe` and `SHA256SUMS` in the same directory. Open PowerShell in that directory and run:
+
+```powershell
+$Installer = Get-Item '.\Wren-Setup-0.1.3-unsigned-x64.exe'
+$Expected = (Get-Content '.\SHA256SUMS' | Where-Object { $_ -like "*  $($Installer.Name)" }).Split()[0]
+$Actual = (Get-FileHash -Algorithm SHA256 $Installer).Hash.ToLowerInvariant()
+if ($Actual -ne $Expected) { throw 'Checksum does not match' }
+Write-Host 'Checksum matches'
+```
+
+Also inspect the GitHub artifact attestation. Stop if the filename, hash, release version, repository, or attested source commit does not match.
 
 ## Run the AppImage
 
 Make the AppImage executable, then run it:
 
 ```bash
-chmod +x Wren-0.1.2.AppImage
-./Wren-0.1.2.AppImage
+chmod +x Wren-0.1.3.AppImage
+./Wren-0.1.3.AppImage
 ```
 
 Keep the AppImage somewhere you control if you plan to continue launching Wren from it.
@@ -67,14 +84,20 @@ Keep the AppImage somewhere you control if you plan to continue launching Wren f
 Install the package using `apt`:
 
 ```bash
-sudo apt install ./wren_0.1.2_amd64.deb
+sudo apt install ./wren_0.1.3_amd64.deb
 ```
 
 Launch Wren from your desktop application menu after installation.
 
+## Install the Windows x64 preview
+
+`Wren-Setup-0.1.3-unsigned-x64.exe` is intentionally unsigned. Windows may report an unknown publisher or show Microsoft Defender SmartScreen. The absence of a warning does not make the installer trusted.
+
+After you verify the checksum and attestation, run the installer only if you accept the preview boundary. It installs Wren for the current user and opens it without a setup wizard. Windows x64 has native package checks, but it is not a platform-qualified target. Review the [Windows preview checklist](https://github.com/jorphex/wren/blob/main/WINDOWS_RELEASE_QUALIFICATION.md) for the tested boundary.
+
 ## Import a Frame profile
 
-Skip this section if you are starting with a new Wren profile.
+Skip this section if you are starting with a new Wren profile. The commands and profile path below apply to the Linux packages.
 
 Wren does not read or share Frame's active profile by default. Its import makes a one-time private copy and leaves the Frame profile unchanged.
 
@@ -85,7 +108,7 @@ Wren does not read or share Frame's active profile by default. Its import makes 
 For the AppImage:
 
 ```bash
-./Wren-0.1.2.AppImage --import-frame-profile
+./Wren-0.1.3.AppImage --import-frame-profile
 ```
 
 For the installed deb:
@@ -107,7 +130,8 @@ The tutorial helps you set the wallet shortcut, enable networks, add an account,
 From **Control center**, open **Accounts**, then select **Add New Account**. Wren offers:
 
 - hardware accounts using Ledger, Trezor, or GridPlus Lattice1;
-- local encrypted accounts from a recovery phrase or private key;
+- new encrypted local accounts with a generated 12-word recovery phrase or Ethereum private key;
+- imported encrypted local accounts from a recovery phrase, private key, or keystore file;
 - a watch-only address that cannot sign.
 
 For a first evaluation, use a watch-only address or a test-only signer with no valuable assets. If you connect hardware, unlock the device and verify the address shown on the device before using it.
@@ -120,7 +144,7 @@ Enter recovery phrases, private keys, and hardware-wallet PINs only in the expec
 
 ## Back up the profile
 
-After configuring accounts and networks, open **Settings**, find **Recovery**, and select **Export backup**. Choose a backup password of at least 12 characters and save the encrypted file somewhere separate from the computer running Wren.
+After configuring accounts and networks, open **Settings**, find **Recovery**, and select **Export backup**. Choose a unique backup password of at least eight characters, preferably longer, and save the encrypted file somewhere separate from the computer running Wren.
 
 Wren cannot recover the backup password. Inspect and test restoration with non-valuable accounts before depending on the backup.
 

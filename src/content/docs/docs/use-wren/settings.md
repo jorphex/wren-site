@@ -12,9 +12,12 @@ The page contains these sections:
 
 - **Desktop behavior** controls how Wren appears, hides, starts, and reports wallet activity.
 - **Accounts and signing** controls account display, hardware derivation, relocking, and the GridPlus Lattice relay.
+- **Privacy** controls optional recent-recipient history stored on this device.
 - **Browser companions** lists paired browser companions. This section appears after you pair one.
 - **Local connections** lists authenticated local applications. This section appears after a local application pairs with Wren.
+- **Contract verification** manages an optional Etherscan API key for direct source publication.
 - **Recovery** exports or restores an encrypted Wren profile.
+- **Software signers** controls optional operating-system device protection for encrypted local signers.
 - **About** shows the instance and version information, the license, and the reset action.
 
 ## Desktop behavior
@@ -51,7 +54,7 @@ After you change a derivation option, check the displayed account and address be
 
 ## Browser companions
 
-Each paired browser appears with its browser name, extension ID, and pairing fingerprint.
+Each paired browser appears as **Paired companion** with its pairing fingerprint.
 
 1. Find the browser entry under **Browser companions**.
 2. Select **Revoke**.
@@ -68,12 +71,18 @@ Each paired local application appears as **Local app** with a shortened **Connec
 
 Revocation removes the local application's access, pending requests, and subscriptions. The application must pair again with a matching code to reconnect.
 
+## Contract verification
+
+The **Etherscan API key** is optional. Wren uses it only for direct Etherscan V2 source publication when Sourcify forwarding is unavailable. Sourcify publication does not require this key.
+
+When operating-system credential protection is available, enter a key containing 16 to 128 letters, numbers, underscores, or hyphens, then select **Save**. Use **Replace** to change a configured key or **Remove** to delete it. Wren does not include the key in profile backups, so you must enter it again after a restore. If secure credential storage is unavailable, Wren does not accept a key.
+
 ## Export an encrypted backup
 
 The export includes accounts, names, networks, contacts, permissions, settings, and signer records. It leaves out live balances, rates, and pending requests.
 
 1. Under **Recovery**, select **Export backup**.
-2. Enter a new **Backup password** with at least 12 characters.
+2. Enter a new **Backup password** with at least eight characters. Prefer a longer, unique password.
 3. Enter the same value in **Confirm password**.
 4. Select **Choose save location**.
 5. Save the encrypted file separately from the computer that runs Wren.

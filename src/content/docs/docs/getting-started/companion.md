@@ -12,35 +12,41 @@ Companion is not a wallet or signer. It does not need your recovery phrase, priv
 
 :::caution[Verify the release]
 
-Download Wren Companion `0.1.1` only from the official release. Verify the archive, checksum, compatibility metadata, and GitHub artifact attestation before installation.
+Download Wren Companion `0.1.2` only from the official release. Verify the archive, checksum, compatibility metadata, and GitHub artifact attestation before installation.
 
 :::
 
 ## Before you begin
 
-- [Install Wren 0.1.2 or later](/docs/getting-started/install/), and keep the desktop application running.
+- [Install Wren 0.1.3](/docs/getting-started/install/), or a later desktop release that retains protocol 3, and keep the desktop application running.
 - Use a current Chrome, Brave, or Firefox browser.
 - Use a disposable browser profile and a test-only wallet account for the first connection.
 - Remove or disable another extension that claims to be Wren; do not pair an archive from an unofficial location.
 
 ## Download the correct browser archive
 
-Open the [Wren Companion `v0.1.1` release](https://github.com/jorphex/wren-companion/releases/tag/v0.1.1) and download:
+Open the [Wren Companion `v0.1.2` release](https://github.com/jorphex/wren-companion/releases/tag/v0.1.2) and download:
 
-- `wren-companion-0.1.1-chrome.zip` for Chrome or Brave; or
-- `wren-companion-0.1.1-firefox.zip` for Firefox;
-- `wren-companion-0.1.1-compatibility.json`;
+- `wren-companion-0.1.2-chrome.zip` for Chrome or Brave; or
+- `wren-companion-0.1.2-firefox.zip` for Firefox;
+- `wren-companion-0.1.2-compatibility.json`;
 - `SHA256SUMS` from the same release.
 
 Calculate the archive hash:
 
 ```bash
-sha256sum wren-companion-0.1.1-chrome.zip
+sha256sum wren-companion-0.1.2-chrome.zip
+```
+
+On Windows, calculate the same hash in PowerShell:
+
+```powershell
+(Get-FileHash -Algorithm SHA256 '.\wren-companion-0.1.2-chrome.zip').Hash.ToLowerInvariant()
 ```
 
 Use the Firefox filename instead when installing for Firefox. The calculated hash must exactly match the archive's entry in `SHA256SUMS`. Also verify the GitHub artifact attestation.
 
-Check that the compatibility file names Companion `0.1.1` and the archive that you downloaded. It must use protocol 3 and require Wren `0.1.2` or later. Your Wren desktop release must satisfy the listed minimum commit.
+Check that the compatibility file names Companion `0.1.2` and the archive that you downloaded. It must use protocol 3 and name the official Wren repository, `main` branch, and minimum desktop commit. Wren `0.1.3` satisfies that minimum. Your installed desktop commit must be the listed commit or a later commit on that branch.
 
 Stop if the archive, checksum, compatibility metadata, repository, or attested source does not match.
 

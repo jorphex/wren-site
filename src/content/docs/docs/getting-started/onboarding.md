@@ -53,7 +53,7 @@ The tutorial opens **Accounts**.
 3. Add a test account or a watch-only address for your first session.
 4. Select **Next**.
 
-Wren supports Ledger, Trezor, and GridPlus Lattice1 hardware accounts. Local account options include a seed phrase, a private key, and a keystore file. A watch account cannot sign.
+Wren supports Ledger, Trezor, and GridPlus Lattice1 hardware accounts. You can create a new encrypted wallet with a 12-word recovery phrase or Ethereum private key, or import a recovery phrase, private key, or keystore file. A watch account cannot sign.
 
 Enter a recovery phrase or private key only in Wren's account setup. Wren Companion and dapp pages do not need these secrets. When you use a hardware device, verify the address on the device before you use the account.
 

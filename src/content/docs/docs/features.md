@@ -10,9 +10,9 @@ This page explains Wren's product boundary. It does not replace the exact protoc
 
 :::caution[Security status]
 
-Wren `0.1.2` and Wren Companion `0.1.1` are published releases. Wren has no independent security audit. The current desktop release target is Linux x64. Use test accounts with no valuable assets until you have evaluated the releases for yourself.
+Wren `0.1.3` and Wren Companion `0.1.2` are published releases. Wren has no independent security audit. Linux x64 is the qualified desktop target. Wren `0.1.3` also includes an unsigned, unqualified Windows x64 preview for local testing. Use test accounts with no valuable assets until you have evaluated the releases for yourself.
 
-Check the [Wren 0.1.2 release](https://github.com/jorphex/wren/releases/tag/v0.1.2) and [Companion 0.1.1 release](https://github.com/jorphex/wren-companion/releases/tag/v0.1.1) for the artifacts, checksums, compatibility metadata, and source-bound attestations.
+Check the [Wren 0.1.3 release](https://github.com/jorphex/wren/releases/tag/v0.1.3) and [Companion 0.1.2 release](https://github.com/jorphex/wren-companion/releases/tag/v0.1.2) for the artifacts, checksums, compatibility metadata, and source-bound attestations.
 
 :::
 
@@ -37,6 +37,14 @@ Support depends on the request and signer. Wren rejects unsupported transaction 
 
 See [How Wren protects approvals](https://github.com/jorphex/wren/blob/main/THREAT_MODEL.md), [RPC compatibility](https://github.com/jorphex/wren/blob/main/RPC_COMPATIBILITY.md), and [supported standards](https://github.com/jorphex/wren/blob/main/SUPPORTED_EIPS.md) for the exact method boundary.
 
+## Local wallet and contract tools
+
+Wren can create an encrypted local wallet with a new 12-word recovery phrase or Ethereum private key. It uses the operating system's secure random generator, requires password and backup confirmation, and shows the new secret only during setup. Wren clears an unchanged copied secret from the clipboard after one minute, but clipboard history or another program may retain it.
+
+The dashboard can prepare a contract deployment from complete EVM creation data and an optional native value. Wren does not compile Solidity or Vyper in this tool. It gathers gas, simulation, and nonce evidence from the configured RPC, then uses the ordinary transaction review, signer, and single-broadcast lifecycle.
+
+Wren can also publish Solidity or Vyper source for an existing contract or a confirmed Wren deployment. It reads supported compiler, Foundry, or Hardhat build files locally and checks them against the selected chain and contract. Sourcify is the primary publication service. Etherscan V2 is an optional fallback on supported networks. Published source is public, and Wren cannot withdraw it.
+
 ## Per-app permissions and network routes
 
 Wren gives each connected app a separate permission record. A permission can bind an app to selected accounts, permitted wallet methods, enabled chains, the app identity, and an expiry. Wren rechecks standing and queued requests against that record.
@@ -55,7 +63,7 @@ Wren Companion injects Wren's EIP-1193 provider into supported browser pages and
 
 Companion is not a wallet, signer, or approval authority. It does not need a recovery phrase, private key, keystore password, or hardware-wallet PIN. Wren desktop keeps the account permission, review, signing, and broadcast authority.
 
-Companion `0.1.1` uses mutually authenticated protocol 3. During setup, **Pair this Companion** shows a six-digit code. Compare it with the code in Wren before you select **Accept**. Select **Decline** for an unexpected request or a code mismatch. Matching codes authenticate the installations. They do not make a compromised computer or browser profile safe.
+Companion `0.1.2` uses mutually authenticated protocol 3. During setup, **Pair this Companion** shows a six-digit code. Compare it with the code in Wren before you select **Accept**. Select **Decline** for an unexpected request or a code mismatch. Matching codes authenticate the installations. They do not make a compromised computer or browser profile safe.
 
 Companion shows **Wren is unavailable** when it cannot reach the desktop. It shows **Update Wren** when the versions do not match. It shows **Wren identity changed** when the saved desktop identity changes.
 
@@ -68,10 +76,11 @@ Chrome and Brave use the Chrome archive. Firefox uses the Firefox archive. The a
 From **Control center** → **Accounts**, select **Add New Account**. **Choose an account type** lists these current options:
 
 - **Hardware devices:** **GridPlus Lattice1**, **Ledger device**, and **Trezor device**.
-- **Local accounts:** **Seed phrase**, **Private key**, and **Keystore file (JSON)**. Wren stores local signer data in encrypted signer workers.
+- **Create new:** a new 12-word **Recovery phrase** or Ethereum **Private key**. Wren stores the new local signer in an encrypted signer worker after backup confirmation.
+- **Import existing:** **Recovery phrase**, **Private key**, and **Keystore file (JSON)**. Wren stores imported local signer data in encrypted signer workers.
 - **Watch-only:** **Watch account**. It can monitor an address but cannot sign.
 
-The release target is Linux x64. Trezor Safe 7 and Trezor Model One have current physical evidence on Linux x64, with documented Model One limitations. Ledger and GridPlus Lattice1 have implemented paths and automated coverage, but they have not been physically requalified. Other Trezor models share implementation and automated bridge coverage but have not been physically requalified. Trezor Safe 7 Bluetooth is unsupported.
+Linux x64 is the qualified release target. Windows x64 is an unsigned, unqualified preview. Trezor Safe 7 and Trezor Model One have current physical evidence on Linux x64, with documented Model One limitations. Ledger and GridPlus Lattice1 have implemented paths and automated coverage, but they have not been physically requalified. Other Trezor models share implementation and automated bridge coverage but have not been physically requalified. Trezor Safe 7 Bluetooth is unsupported.
 
 These labels describe project evidence. They are not security certification. Review [Signer and platform support](https://github.com/jorphex/wren/blob/main/HARDWARE_SUPPORT.md) before you rely on a signer.
 
@@ -107,7 +116,7 @@ Wren also supports a one-time **Import a Frame profile** flow. It copies validat
 
 The current release does not claim support for:
 
-- macOS, Windows, or Linux arm64 as released and platform-qualified desktop targets;
+- macOS, Windows, or Linux arm64 as platform-qualified desktop targets. Windows x64 is available only as an unsigned preview;
 - Trezor Safe 7 Bluetooth;
 - smart accounts, ERC-4337 user operations, mobile, or WalletConnect; or
 - atomic EIP-5792 execution, EIP-4844 type-3 blob transactions, or externally supplied EIP-7702 authorization input.

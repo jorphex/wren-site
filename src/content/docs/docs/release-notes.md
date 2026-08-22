@@ -10,15 +10,47 @@ This page lists changes that affect Wren installation, compatibility, security, 
 
 ## Release boundary
 
-Wren has no independent security audit. Linux x64 is the current qualified desktop target, and its packages are unsigned. Use a disposable profile and test accounts while you evaluate a release.
+Wren has no independent security audit. Linux x64 is the current qualified desktop target, and its packages are unsigned. Wren `0.1.3` also includes an unsigned Windows x64 preview for local testing. Windows is not a platform-qualified target. Use a disposable profile and test accounts while you evaluate a release.
 
 Simulation, decoded labels, and guardrails provide review evidence. They do not guarantee transaction safety. See [Signer and platform support](https://github.com/jorphex/wren/blob/main/HARDWARE_SUPPORT.md) for the current qualification boundary.
 
 ## Current releases
 
-Released August 19, 2026.
+Released August 22, 2026.
 
-The current compatible pair is Wren `0.1.2` with Wren Companion `0.1.1`. Version numbers do not need to match. Install Wren `0.1.2` before you install or update Companion `0.1.1`.
+The current compatible pair is Wren `0.1.3` with Wren Companion `0.1.2`. Version numbers do not need to match. Install Wren `0.1.3` before you install or update Companion `0.1.2`.
+
+### Wren 0.1.3
+
+Wren `0.1.3` adds local wallet creation and contract tools. It also makes transactions, browser connections, permissions, and restart recovery clearer and more reliable.
+
+- Creates an encrypted local wallet with a new 12-word recovery phrase or Ethereum private key. Wren confirms the password and backup, shows the secret only during setup, and clears an unchanged copied secret from the clipboard after one minute.
+- Prepares contract deployments from complete creation data, then simulates, reviews, signs, and sends them through the normal transaction flow.
+- Publishes Solidity or Vyper source for existing contracts and confirmed Wren deployments. Wren checks supported compiler, Foundry, and Hardhat build files against the selected contract before publication. Sourcify is the primary service, with an optional Etherscan V2 fallback on supported networks.
+- Keeps submitted transactions visible for confirmation and avoids sending again when the result is unknown. Send, Connected Apps, network editing, endpoint failover, signer removal, and Earn have clearer states and stronger recovery behavior.
+- Upgrades profiles from Wren `0.1.2` without resetting encrypted signers, permissions, connected apps, networks, contacts, tokens, or activity.
+- Saves generated accounts, transaction intent, access changes, signer removal, and source-publication state before reporting success or taking irreversible follow-up actions.
+- Improves keyboard, screen-reader, focus, scaling, and short-height behavior across wallet creation, account access, transactions, networks, deployment, and source publication.
+- Adds `Wren-Setup-0.1.3-unsigned-x64.exe` as a Windows x64 preview. It is a one-click current-user installer, may be shown as an unknown publisher, and is not platform-qualified.
+
+[Download Wren 0.1.3](https://github.com/jorphex/wren/releases/tag/v0.1.3). Verify the applicable `SHA256SUMS` entry and GitHub artifact attestation before installation. A checksum does not create a trusted Windows publisher.
+
+### Wren Companion 0.1.2
+
+Wren Companion `0.1.2` improves connection reliability on Etherscan, BaseScan, and other Ethereum apps.
+
+- Connects on apps that also check for MetaMask compatibility while continuing to identify itself as Wren.
+- Shows the active network and the site's Wren or MetaMask setting more reliably, including on pages that use embedded frames.
+- Handles sites that request a network switch before account access, including BaseScan's Base network flow.
+- Keeps site setting changes tied to the exact requesting page in Chrome and Firefox.
+- Keeps the last known network list visible during brief local disconnects or browser background restarts. It does not store accounts, requests, transactions, or page content in that list.
+- Retains EIP-1193, EIP-6963, mutually authenticated pairing protocol 3, and the pairing and page-isolation boundaries from `0.1.1`.
+
+[Download Wren Companion 0.1.2](https://github.com/jorphex/wren-companion/releases/tag/v0.1.2). Use the Chrome archive for Chrome or Brave, and the Firefox archive for Firefox. Verify the archive, checksum, compatibility metadata, and GitHub artifact attestation before installation.
+
+## Wren 0.1.2 and Wren Companion 0.1.1
+
+Released August 19, 2026.
 
 ### Wren 0.1.2
 

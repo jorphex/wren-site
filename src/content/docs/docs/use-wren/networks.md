@@ -10,7 +10,7 @@ Use **Control center** → **Networks** to manage the EVM networks that Wren can
 
 :::caution[Check every network and endpoint]
 
-Wren `0.1.2` has no independent security audit. Check the chain ID, endpoint host, and connection status before you enable a network or approve a dapp-requested network. Treat endpoint data as a security and privacy decision.
+Wren `0.1.3` has no independent security audit. Check the chain ID, endpoint host, and connection status before you enable a network or approve a dapp-requested network. Treat endpoint data as a security and privacy decision.
 
 :::
 
