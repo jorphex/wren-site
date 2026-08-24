@@ -14,6 +14,12 @@ Wren `0.1.3` has no independent security audit. Check the chain ID, endpoint hos
 
 :::
 
+:::caution[Wren 0.1.3 Send issue]
+
+In Wren `0.1.3`, a native or ERC-20 Send on a recognized OP Stack network can remain at **Funding check unavailable**. This includes Base, Base Sepolia, Optimism, Optimism Sepolia, and Zora. Wren does not sign or send when funding evidence is missing. Wren `0.1.4` is in preparation with a fix. Use a test account and small test amounts.
+
+:::
+
 ## Enable or disable a network
 
 1. Open **Control center**.

@@ -14,6 +14,20 @@ Wren has no independent security audit. Linux x64 is the current qualified deskt
 
 Simulation, decoded labels, and guardrails provide review evidence. They do not guarantee transaction safety. See [Signer and platform support](https://github.com/jorphex/wren/blob/main/HARDWARE_SUPPORT.md) for the current qualification boundary.
 
+## Upcoming Wren 0.1.4
+
+Wren `0.1.4` is in preparation. It is not published. Wren `0.1.3` remains the current desktop release.
+
+The candidate is designed to use Wren Companion `0.1.2` over authenticated protocol 3. The planned release will:
+
+- Restore native and ERC-20 Sends on Base, Base Sepolia, Optimism, Optimism Sepolia, Zora, and recognized legacy OP Stack networks.
+- Wait for fresh OP Stack fee evidence before initial approval. **Recheck** will refresh gas, fee, and balance evidence.
+- Not sign or broadcast when funding evidence is missing or invalid.
+- Keep the funding warning and **Recheck** controls in stable positions. **Send** and **Review Send** will use one continuous panel background.
+- Limit compiler-version validation work for malformed source input.
+- Add Intel and Apple Silicon macOS previews. They will be ad-hoc signed, unnotarized, and unqualified. They will have no trusted Apple publisher or automatic updates. Physical qualification is pending.
+- Keep Linux x64 as the qualified target and keep the Windows x64 preview unsigned and unqualified.
+
 ## Current releases
 
 Released August 22, 2026.

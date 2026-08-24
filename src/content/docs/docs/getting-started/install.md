@@ -95,6 +95,12 @@ Launch Wren from your desktop application menu after installation.
 
 After you verify the checksum and attestation, run the installer only if you accept the preview boundary. It installs Wren for the current user and opens it without a setup wizard. Windows x64 has native package checks, but it is not a platform-qualified target. Review the [Windows preview checklist](https://github.com/jorphex/wren/blob/main/WINDOWS_RELEASE_QUALIFICATION.md) for the tested boundary.
 
+## Planned macOS previews
+
+Wren `0.1.3` has no macOS package. The Wren `0.1.4` candidate adds separate Intel and Apple Silicon previews. They are ad-hoc signed, unnotarized, and unqualified. They have no trusted Apple publisher. Physical qualification is pending. Wren will not provide automatic updates for these previews. macOS can require **Open Anyway** on first launch.
+
+Wait for a published Wren release before you install a macOS package. Verify its checksum and GitHub attestations before you run it.
+
 ## Import a Frame profile
 
 Skip this section if you are starting with a new Wren profile. The commands and profile path below apply to the Linux packages.
