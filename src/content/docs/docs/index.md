@@ -12,7 +12,7 @@ Wren Companion connects browser dapps to Wren on the same computer. Companion ca
 
 :::caution[Security status]
 
-Wren `0.1.3` and Wren Companion `0.1.2` are published releases. Wren has no independent security audit. Linux x64 is the qualified desktop target. Wren `0.1.3` also includes an unsigned, unqualified Windows x64 preview for local testing. Use test accounts with no valuable assets while you evaluate the releases.
+Wren `0.1.4` and Wren Companion `0.1.2` are published releases. Wren has no independent security audit. Linux x64 is the qualified desktop target. Windows x64 is an unsigned, unqualified preview. macOS x64 and arm64 are ad-hoc signed, unnotarized, and unqualified previews. Use test accounts with no valuable assets while you evaluate the releases.
 
 :::
 
@@ -20,7 +20,7 @@ Wren `0.1.3` and Wren Companion `0.1.2` are published releases. Wren has no inde
 
 - Read [Wren features and boundaries](/docs/features/) to understand the current product scope.
 - Read the [release notes](/docs/release-notes/) before you update Wren or Companion.
-- [Install and start Wren](/docs/getting-started/install/) on Linux x64, or evaluate the unsigned Windows x64 preview. Verify the package before you run it.
+- [Install and start Wren](/docs/getting-started/install/) on Linux x64, or evaluate a Windows or macOS preview. Verify the package before you run it.
 - [Complete Wren onboarding](/docs/getting-started/onboarding/) and add a test or watch-only account.
 - [Install and pair Wren Companion](/docs/getting-started/companion/) when you need browser dapps. Compare the six-digit code in Companion and Wren before you accept the pairing request.
 - Use Wren's local provider for a native application that supports it. Companion is not required.

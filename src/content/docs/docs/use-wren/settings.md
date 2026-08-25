@@ -52,6 +52,12 @@ Use these controls when the addresses or signer paths that Wren shows do not mat
 
 After you change a derivation option, check the displayed account and address before you approve a request or sign.
 
+## Software signers
+
+Wren can add optional operating-system device protection to software signer files on Linux and Windows x64. The signer password remains required. macOS does not support this protection, and software signer files remain protected only by their signer password.
+
+Use **Settings** → **Software signers** to enable, remove, or retry device protection when the operating-system credential store is available. Export a current encrypted backup before you change this setting. A protected live profile is bound to its Linux keychain or Windows user. Use an encrypted Wren backup, not a copied live profile, to move signers to another computer or user.
+
 ## Browser companions
 
 Each paired browser appears as **Paired companion** with its pairing fingerprint.

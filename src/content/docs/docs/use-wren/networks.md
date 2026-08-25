@@ -10,13 +10,7 @@ Use **Control center** → **Networks** to manage the EVM networks that Wren can
 
 :::caution[Check every network and endpoint]
 
-Wren `0.1.3` has no independent security audit. Check the chain ID, endpoint host, and connection status before you enable a network or approve a dapp-requested network. Treat endpoint data as a security and privacy decision.
-
-:::
-
-:::caution[Wren 0.1.3 Send issue]
-
-In Wren `0.1.3`, a native or ERC-20 Send on a recognized OP Stack network can remain at **Funding check unavailable**. This includes Base, Base Sepolia, Optimism, Optimism Sepolia, and Zora. Wren does not sign or send when funding evidence is missing. Wren `0.1.4` is in preparation with a fix. Use a test account and small test amounts.
+Wren `0.1.4` has no independent security audit. Check the chain ID, endpoint host, and connection status before you enable a network or approve a dapp-requested network. Treat endpoint data as a security and privacy decision.
 
 :::
 
@@ -94,5 +88,9 @@ Each row shows a status such as **Connected**, **Checking connection…**, **Can
 Wren keeps the first endpoint row. You can add no more than five endpoint rows. Check the status after you change a URL or its order. Stop if the status is **Can’t connect** or if the endpoint reports a chain ID that does not match the network you selected.
 
 If the active endpoint fails, Wren can switch to the next enabled endpoint. Review the endpoint order and host before you rely on automatic failover.
+
+## Recheck an OP Stack funding failure
+
+On a recognized OP Stack network, Wren gets fresh L1 fee evidence before approval. If **Send** shows **Funding check unavailable**, check the RPC endpoint and select **Recheck**. Wren refreshes the gas estimate, L1 fee, and balance before it repeats the funding check. It does not sign or broadcast while required evidence is missing or invalid.
 
 For method-level and local-provider behavior, read Wren's [RPC compatibility reference](https://github.com/jorphex/wren/blob/main/RPC_COMPATIBILITY.md). To manage account permissions before you change a route, see [Manage accounts and signers](/docs/use-wren/accounts/).

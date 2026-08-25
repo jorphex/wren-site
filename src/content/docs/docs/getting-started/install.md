@@ -1,16 +1,16 @@
 ---
 title: Install and start Wren
-description: Verify and install Wren on Linux x64 or evaluate the Windows x64 preview, then complete first launch and add a test account.
+description: Verify and install Wren on Linux x64, or evaluate Windows and macOS previews, then complete first launch and add a test account.
 sidebar:
   label: Install and start Wren
   order: 2
 ---
 
-This tutorial takes you from a verified Wren package to a running wallet with a first test account. Linux x64 is the qualified desktop target. Windows x64 is available as an unsigned, unqualified preview for local testing.
+This tutorial takes you from a verified Wren package to a running wallet with a first test account. Linux x64 is the qualified desktop target. Windows x64 and macOS x64/arm64 are unqualified previews.
 
 :::caution[Verify the release]
 
-Download Wren `0.1.3` only from the official release. Verify the checksum and GitHub artifact attestation before you run a package. The Linux packages and Windows preview are unsigned. A checksum does not create a trusted publisher.
+Download Wren `0.1.4` only from the official release. Verify the checksum and GitHub build and SBOM attestations before you run a package. The Linux packages and Windows preview are unsigned. The macOS previews are ad-hoc signed and unnotarized. Checksums and attestations do not create a trusted Windows or Apple publisher.
 
 :::
 
@@ -18,7 +18,7 @@ Download Wren `0.1.3` only from the official release. Verify the checksum and Gi
 
 You need:
 
-- a Linux x64 system for the qualified release, or a Windows x64 system for the unqualified preview;
+- a Linux x64 system for the qualified release, a Windows x64 system for the unsigned preview, or an Intel or Apple Silicon Mac for an unnotarized preview;
 - a terminal or PowerShell and permission to install or run local applications;
 - a test account that holds no valuable assets, or an address to add as watch-only;
 - an optional supported hardware wallet connected over USB.
@@ -29,11 +29,13 @@ If you intend to import an existing Frame profile, read [Import a Frame profile]
 
 ## Download and verify Wren
 
-Open the [Wren `v0.1.3` release](https://github.com/jorphex/wren/releases/tag/v0.1.3) and download:
+Open the [Wren `v0.1.4` release](https://github.com/jorphex/wren/releases/tag/v0.1.4) and download:
 
-- `Wren-0.1.3.AppImage` for a portable Linux application;
-- `wren_0.1.3_amd64.deb` for a Linux system installation; or
-- `Wren-Setup-0.1.3-unsigned-x64.exe` for the Windows x64 preview;
+- `Wren-0.1.4.AppImage` for a portable Linux application;
+- `wren_0.1.4_amd64.deb` for a Linux system installation;
+- `Wren-Setup-0.1.4-unsigned-x64.exe` for the Windows x64 preview;
+- `Wren-0.1.4-macos-arm64-unnotarized.dmg` for Apple Silicon;
+- `Wren-0.1.4-macos-x64-unnotarized.dmg` for an Intel Mac; and
 - `SHA256SUMS` from the same release.
 
 ### Verify a Linux package
@@ -41,13 +43,13 @@ Open the [Wren `v0.1.3` release](https://github.com/jorphex/wren/releases/tag/v0
 Keep the package and checksum file in the same directory. Calculate the package hash:
 
 ```bash
-sha256sum Wren-0.1.3.AppImage
+sha256sum Wren-0.1.4.AppImage
 ```
 
 For the deb package, use:
 
 ```bash
-sha256sum wren_0.1.3_amd64.deb
+sha256sum wren_0.1.4_amd64.deb
 ```
 
 The calculated hash must exactly match that package's entry in `SHA256SUMS`. Also inspect the GitHub artifact attestation attached to the release. Stop if a name, hash, release version, repository, or attested source commit does not match.
@@ -56,10 +58,10 @@ The packages are unsigned. A successful installation prompt is not a substitute 
 
 ### Verify the Windows preview
 
-Keep `Wren-Setup-0.1.3-unsigned-x64.exe` and `SHA256SUMS` in the same directory. Open PowerShell in that directory and run:
+Keep `Wren-Setup-0.1.4-unsigned-x64.exe` and `SHA256SUMS` in the same directory. Open PowerShell in that directory and run:
 
 ```powershell
-$Installer = Get-Item '.\Wren-Setup-0.1.3-unsigned-x64.exe'
+$Installer = Get-Item '.\Wren-Setup-0.1.4-unsigned-x64.exe'
 $Expected = (Get-Content '.\SHA256SUMS' | Where-Object { $_ -like "*  $($Installer.Name)" }).Split()[0]
 $Actual = (Get-FileHash -Algorithm SHA256 $Installer).Hash.ToLowerInvariant()
 if ($Actual -ne $Expected) { throw 'Checksum does not match' }
@@ -68,13 +70,24 @@ Write-Host 'Checksum matches'
 
 Also inspect the GitHub artifact attestation. Stop if the filename, hash, release version, repository, or attested source commit does not match.
 
+### Verify a macOS preview
+
+Keep the matching DMG and `SHA256SUMS` in the same directory. For Apple Silicon, open Terminal in that directory and run:
+
+```bash
+file='Wren-0.1.4-macos-arm64-unnotarized.dmg'
+grep "  $file$" SHA256SUMS | shasum -a 256 --check
+```
+
+Use `Wren-0.1.4-macos-x64-unnotarized.dmg` as `file` on an Intel Mac. The result must show `OK`. Also inspect the GitHub build and SBOM attestations. Stop if the filename, checksum, release version, repository, or attested source commit does not match.
+
 ## Run the AppImage
 
 Make the AppImage executable, then run it:
 
 ```bash
-chmod +x Wren-0.1.3.AppImage
-./Wren-0.1.3.AppImage
+chmod +x Wren-0.1.4.AppImage
+./Wren-0.1.4.AppImage
 ```
 
 Keep the AppImage somewhere you control if you plan to continue launching Wren from it.
@@ -84,22 +97,28 @@ Keep the AppImage somewhere you control if you plan to continue launching Wren f
 Install the package using `apt`:
 
 ```bash
-sudo apt install ./wren_0.1.3_amd64.deb
+sudo apt install ./wren_0.1.4_amd64.deb
 ```
 
 Launch Wren from your desktop application menu after installation.
 
 ## Install the Windows x64 preview
 
-`Wren-Setup-0.1.3-unsigned-x64.exe` is intentionally unsigned. Windows may report an unknown publisher or show Microsoft Defender SmartScreen. The absence of a warning does not make the installer trusted.
+`Wren-Setup-0.1.4-unsigned-x64.exe` is intentionally unsigned. Windows may report an unknown publisher or show Microsoft Defender SmartScreen. The absence of a warning does not make the installer trusted.
 
 After you verify the checksum and attestation, run the installer only if you accept the preview boundary. It installs Wren for the current user and opens it without a setup wizard. Windows x64 has native package checks, but it is not a platform-qualified target. Review the [Windows preview checklist](https://github.com/jorphex/wren/blob/main/WINDOWS_RELEASE_QUALIFICATION.md) for the tested boundary.
 
-## Planned macOS previews
+## Install a macOS preview
 
-Wren `0.1.3` has no macOS package. The Wren `0.1.4` candidate adds separate Intel and Apple Silicon previews. They are ad-hoc signed, unnotarized, and unqualified. They have no trusted Apple publisher. Physical qualification is pending. Wren will not provide automatic updates for these previews. macOS can require **Open Anyway** on first launch.
+The Intel and Apple Silicon previews are ad-hoc signed, unnotarized, and unqualified. They have no trusted Apple publisher. Physical qualification is pending. Wren does not provide automatic updates for these previews.
 
-Wait for a published Wren release before you install a macOS package. Verify its checksum and GitHub attestations before you run it.
+1. Open the verified DMG and drag **Wren** to **Applications**.
+2. Try to open Wren once. macOS should block the unidentified, unnotarized application.
+3. Open **System Settings** → **Privacy & Security** and find **Security**.
+4. Select **Open Anyway** for Wren.
+5. Authenticate, confirm **Open**, and verify that the application name is Wren.
+
+Do not disable Gatekeeper or remove quarantine attributes globally. Download and verify each later Wren version because automatic macOS updates are not available. macOS has no Wren operating-system device protection for software signers. Start with a disposable account and test funds.
 
 ## Import a Frame profile
 
@@ -114,7 +133,7 @@ Wren does not read or share Frame's active profile by default. Its import makes 
 For the AppImage:
 
 ```bash
-./Wren-0.1.3.AppImage --import-frame-profile
+./Wren-0.1.4.AppImage --import-frame-profile
 ```
 
 For the installed deb:

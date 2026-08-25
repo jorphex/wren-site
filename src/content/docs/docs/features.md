@@ -10,9 +10,9 @@ This page explains Wren's product boundary. It does not replace the exact protoc
 
 :::caution[Security status]
 
-Wren `0.1.3` and Wren Companion `0.1.2` are published releases. Wren has no independent security audit. Linux x64 is the qualified desktop target. Wren `0.1.3` also includes an unsigned, unqualified Windows x64 preview for local testing. Use test accounts with no valuable assets until you have evaluated the releases for yourself.
+Wren `0.1.4` and Wren Companion `0.1.2` are published releases. Wren has no independent security audit. Linux x64 is the qualified desktop target. Windows x64 is an unsigned, unqualified preview. macOS x64 and arm64 are ad-hoc signed, unnotarized, and unqualified previews. Use test accounts with no valuable assets until you have evaluated the releases for yourself.
 
-Check the [Wren 0.1.3 release](https://github.com/jorphex/wren/releases/tag/v0.1.3) and [Companion 0.1.2 release](https://github.com/jorphex/wren-companion/releases/tag/v0.1.2) for the artifacts, checksums, compatibility metadata, and source-bound attestations.
+Check the [Wren 0.1.4 release](https://github.com/jorphex/wren/releases/tag/v0.1.4) and [Companion 0.1.2 release](https://github.com/jorphex/wren-companion/releases/tag/v0.1.2) for the artifacts, checksums, compatibility metadata, and source-bound attestations.
 
 :::
 
@@ -30,6 +30,8 @@ Wren can review:
 - selected simulation effects and call-trace evidence from the configured RPC.
 
 Wren normalizes, checks, simulates when available, reviews, signs, and broadcasts supported transactions. It does not make an unsafe request safe by changing its meaning. Review the destination, account, network, amounts, approvals, and calldata yourself. Compare the request with the hardware-device display when the signer supports it.
+
+Queued transactions are read-only while an earlier transaction is active. After Wren submits the current transaction, it opens the next request for review and continues confirmation and reorganization monitoring in the background.
 
 Simulation is evidence from a configured RPC. It is not a guarantee of execution or outcome. Use another trusted review when a simulation fails, is unavailable, is truncated, or is incomplete. Wren requires explicit consent for dangerous legacy `eth_sign` requests.
 
@@ -80,7 +82,7 @@ From **Control center** → **Accounts**, select **Add New Account**. **Choose a
 - **Import existing:** **Recovery phrase**, **Private key**, and **Keystore file (JSON)**. Wren stores imported local signer data in encrypted signer workers.
 - **Watch-only:** **Watch account**. It can monitor an address but cannot sign.
 
-Linux x64 is the qualified release target. Windows x64 is an unsigned, unqualified preview. Trezor Safe 7 and Trezor Model One have current physical evidence on Linux x64, with documented Model One limitations. Ledger and GridPlus Lattice1 have implemented paths and automated coverage, but they have not been physically requalified. Other Trezor models share implementation and automated bridge coverage but have not been physically requalified. Trezor Safe 7 Bluetooth is unsupported.
+Linux x64 is the qualified release target. Windows x64 is an unsigned, unqualified preview. macOS x64 and arm64 are ad-hoc signed, unnotarized, and unqualified previews without physical qualification. Trezor Safe 7 and Trezor Model One have current physical evidence on Linux x64, with documented Model One limitations. Ledger and GridPlus Lattice1 have implemented paths and automated coverage, but they have not been physically requalified. Other Trezor models share implementation and automated bridge coverage but have not been physically requalified. Trezor Safe 7 Bluetooth is unsupported.
 
 These labels describe project evidence. They are not security certification. Review [Signer and platform support](https://github.com/jorphex/wren/blob/main/HARDWARE_SUPPORT.md) before you rely on a signer.
 
@@ -116,7 +118,7 @@ Wren also supports a one-time **Import a Frame profile** flow. It copies validat
 
 The current release does not claim support for:
 
-- macOS, Windows, or Linux arm64 as platform-qualified desktop targets. Windows x64 is available only as an unsigned preview;
+- macOS, Windows, or Linux arm64 as platform-qualified desktop targets. Windows x64 and macOS x64/arm64 are available only as unqualified previews;
 - Trezor Safe 7 Bluetooth;
 - smart accounts, ERC-4337 user operations, mobile, or WalletConnect; or
 - atomic EIP-5792 execution, EIP-4844 type-3 blob transactions, or externally supplied EIP-7702 authorization input.
