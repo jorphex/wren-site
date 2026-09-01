@@ -1,6 +1,6 @@
 ---
 title: Manage accounts and addresses
-description: Add, select, review, and remove Wren accounts, signer records, and connected-app access.
+description: Add, select, review, and remove Wren accounts, signer records, and app access.
 sidebar:
   label: Accounts and addresses
   order: 1
@@ -10,16 +10,17 @@ Use **Control center** → **Accounts** to add and manage accounts. Wren keeps a
 
 :::caution[Security status]
 
-Wren `0.1.4` has no independent security audit. Use test accounts with no valuable assets while you evaluate it. Review the current [signer and platform support](https://github.com/jorphex/wren/blob/main/HARDWARE_SUPPORT.md) before you rely on a hardware signer.
+Wren `0.1.5` has no independent security audit. Use test accounts with no valuable assets while you evaluate it. Review the current [signer and platform support](https://github.com/jorphex/wren/blob/main/HARDWARE_SUPPORT.md) before you rely on a hardware signer.
 
 :::
 
 ## Add an account
 
-1. Open **Control center**.
-2. Select **Accounts**.
-3. Select **Add New Account**.
-4. Select an option under **Choose an account type**.
+1. Open the wallet account selector.
+2. Select **Add account**.
+3. Select an option under **Choose an account type**.
+
+**Control center** → **Accounts** also provides direct **Derive new**, **Watch**, and **Import** actions.
 
 Wren currently offers these account types:
 
@@ -70,15 +71,15 @@ To manage the current account, use the controls next to its address:
 
 Wren may display an ENS name in place of the local name when ENS data is available. Verify the full address before you send or approve a request.
 
-## Manage connected-app access
+## Manage app access
 
 Connected-app access is stored per account. It does not grant access to every account in the profile.
 
 1. Select the account.
-2. Find **Connected apps** in the account view.
+2. Find **Apps with access** in the account view.
 3. Check the origin shown for each app.
-4. Use the **Access for `<origin>`** toggle to revoke or restore access for that account.
-5. Select **Clear all permissions** when you want to remove every listed app permission for the account.
+4. Select **Revoke access**, then select **Confirm revoke**.
+5. To remove every listed permission, select **View all app access**, then select **Revoke all app access**.
 
 Revocation affects future requests for that account. It does not delete the account or its signer. Review the app's network route separately in [Manage networks](/docs/use-wren/networks/).
 

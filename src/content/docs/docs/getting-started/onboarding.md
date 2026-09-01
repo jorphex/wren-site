@@ -61,7 +61,7 @@ Enter a recovery phrase or private key only in Wren's account setup. Wren Compan
 
 [Wren Companion](/docs/getting-started/companion/) routes browser requests to Wren on the same computer. Companion is not a wallet or signer.
 
-1. Select **Chrome** or **Firefox** to open the Companion release downloads, or install Companion later.
+1. Select **Chrome** to open the Chrome Web Store, or select **Firefox** to open the Companion release downloads. You can also install Companion later.
 2. Review and approve or reject each browser request in Wren.
 3. Select **Next**.
 
@@ -82,6 +82,4 @@ The final screen says **Ready to begin**.
 1. Review the reminder to review each request before anything is signed.
 2. Select **Open Wren**.
 
-Wren closes the tutorial and opens the **Control center**. From there, you can manage **Accounts**, **Networks**, **Connected apps**, **Tokens**, and **Settings**. Wren is ready for local tools. Use [Wren Companion](/docs/getting-started/companion/) when a browser dapp needs a browser wallet.
-
-![The Wren Control center after onboarding, with Accounts, Networks, Connected apps, Tokens, Earn, and Settings.](../../../../assets/docs/wren-control-center.png)
+Wren closes the tutorial and opens the **Control center**. Its persistent navigation provides **Home**, **Accounts**, **Networks**, **App activity**, and **Settings**. Wren is ready for local tools. Use [Wren Companion](/docs/getting-started/companion/) when a browser dapp needs a browser wallet.

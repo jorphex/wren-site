@@ -10,9 +10,9 @@ This page explains Wren's product boundary. It does not replace the exact protoc
 
 :::caution[Security status]
 
-Wren `0.1.4` and Wren Companion `0.1.2` are published releases. Wren has no independent security audit. Linux x64 is the qualified desktop target. Windows x64 is an unsigned, unqualified preview. macOS x64 and arm64 are ad-hoc signed, unnotarized, and unqualified previews. Use test accounts with no valuable assets until you have evaluated the releases for yourself.
+Wren `0.1.5` and Wren Companion `0.1.2` are published releases. Wren has no independent security audit. Linux x64 is the qualified desktop target. Windows x64 is an unsigned, unqualified preview. macOS x64 and arm64 are ad-hoc signed, unnotarized, and unqualified previews. Use test accounts with no valuable assets until you have evaluated the releases for yourself.
 
-Check the [Wren 0.1.4 release](https://github.com/jorphex/wren/releases/tag/v0.1.4) and [Companion 0.1.2 release](https://github.com/jorphex/wren-companion/releases/tag/v0.1.2) for the artifacts, checksums, compatibility metadata, and source-bound attestations.
+Check the [Wren 0.1.5 release](https://github.com/jorphex/wren/releases/tag/v0.1.5) and [Companion 0.1.2 release](https://github.com/jorphex/wren-companion/releases/tag/v0.1.2) for the artifacts, checksums, compatibility metadata, and source-bound attestations.
 
 :::
 
@@ -37,6 +37,8 @@ Simulation is evidence from a configured RPC. It is not a guarantee of execution
 
 Support depends on the request and signer. Wren rejects unsupported transaction types and fields instead of silently rewriting them. Type-3 blob transactions are unsupported. EIP-5792 calls are sequential and non-atomic. Permit and SIWE support is review and consent support; Wren does not authenticate a web session or execute a permit contract for you.
 
+Permit reviews show the account, token, amount, network, spender, expiry, and signature type. Token approval reviews keep the spender, expiry, limit, and warning together. Wallet Calls reviews show the starting nonce, maximum batch fee, and transaction fee controls.
+
 See [How Wren protects approvals](https://github.com/jorphex/wren/blob/main/THREAT_MODEL.md), [RPC compatibility](https://github.com/jorphex/wren/blob/main/RPC_COMPATIBILITY.md), and [supported standards](https://github.com/jorphex/wren/blob/main/SUPPORTED_EIPS.md) for the exact method boundary.
 
 ## Local wallet and contract tools
@@ -53,7 +55,7 @@ Wren gives each connected app a separate permission record. A permission can bin
 
 An app's network route is separate from every other app's route. An authorized app can switch its own route to an enabled network. The switch does not change another app's route. Wren deliberately has no shared wallet-wide network selection.
 
-Open **Control center** → **Connected apps** to review retained access and default networks. Revoke access when an app no longer needs it. A browser origin and an authenticated local client have different source identities and revocation paths.
+Open **Control center** → **App activity** to review retained access and default networks. Revoke access when an app no longer needs it. A browser origin and an authenticated local client have different source identities and revocation paths.
 
 ![Two apps use Wren at the same time. Each app has a separate account permission and network route. There is no shared network switch.](../../../assets/docs/wren-per-app-routes.svg)
 
@@ -71,11 +73,17 @@ Companion shows **Wren is unavailable** when it cannot reach the desktop. It sho
 
 Do not bypass an update warning. Use **Reset pairing** only when you expect the identity change. Then compare a new code.
 
-Chrome and Brave use the Chrome archive. Firefox uses the Firefox archive. The archives have different background manifests and are not interchangeable. Companion has no telemetry or remote code. Read the Companion [security policy](https://github.com/jorphex/wren-companion/blob/main/SECURITY.md) and [privacy policy](https://github.com/jorphex/wren-companion/blob/main/PRIVACY.md) for its browser boundary.
+Chrome and Brave can install Companion from the [Chrome Web Store](https://chromewebstore.google.com/detail/wren-companion/ifimccfajfbgligbhcgfapdagpnfkbhn). Firefox store review is pending. Verified Chrome and Firefox archives remain available from the [Companion release](https://github.com/jorphex/wren-companion/releases/tag/v0.1.2). The packages are not interchangeable. Companion has no telemetry or remote code. Read the Companion [security policy](https://github.com/jorphex/wren-companion/blob/main/SECURITY.md) and [privacy policy](https://github.com/jorphex/wren-companion/blob/main/PRIVACY.md) for its browser boundary.
+
+## Activity details
+
+Select an Activity row to see its type, result, app, network, account, and exact times. Supported transaction entries can request bounded context from the configured RPC. Wren checks the retained hash, sending account, and canonical block when available. It labels partial or unavailable evidence instead of guessing.
+
+Wren keeps a small reference ledger for the 90-day Activity window. It stores the activity identity, account, origin, chain, submitted hashes, and an optional canonical block reference. It does not store fetched transaction bodies, calldata, opaque decoded bytes, recipients, or amounts. The ledger is not included in profile backups. See [Review Activity](/docs/use-wren/activity/) for the user controls and clearing boundary.
 
 ## Accounts and signers
 
-From **Control center** → **Accounts**, select **Add New Account**. **Choose an account type** lists these current options:
+Open the wallet account selector, then select **Add account**. **Choose an account type** lists these current options:
 
 - **Hardware devices:** **GridPlus Lattice1**, **Ledger device**, and **Trezor device**.
 - **Create new:** a new 12-word **Recovery phrase** or Ethereum **Private key**. Wren stores the new local signer in an encrypted signer worker after backup confirmation.

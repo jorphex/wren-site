@@ -12,7 +12,7 @@ Wren Companion connects browser dapps to Wren on the same computer. Companion ca
 
 :::caution[Security status]
 
-Wren `0.1.4` and Wren Companion `0.1.2` are published releases. Wren has no independent security audit. Linux x64 is the qualified desktop target. Windows x64 is an unsigned, unqualified preview. macOS x64 and arm64 are ad-hoc signed, unnotarized, and unqualified previews. Use test accounts with no valuable assets while you evaluate the releases.
+Wren `0.1.5` and Wren Companion `0.1.2` are published releases. Wren has no independent security audit. Linux x64 is the qualified desktop target. Windows x64 is an unsigned, unqualified preview. macOS x64 and arm64 are ad-hoc signed, unnotarized, and unqualified previews. Use test accounts with no valuable assets while you evaluate the releases.
 
 :::
 
@@ -26,7 +26,7 @@ Wren `0.1.4` and Wren Companion `0.1.2` are published releases. Wren has no inde
 - Use Wren's local provider for a native application that supports it. Companion is not required.
 - [Import a Frame profile](/docs/getting-started/install/#import-a-frame-profile) when you need a one-time private copy of an existing profile. Wren does not read Frame's live profile by default.
 
-After setup, open **Control center**. You can manage [accounts](/docs/use-wren/accounts/), [networks](/docs/use-wren/networks/), [tokens](/docs/use-wren/tokens/), [Earn](/docs/use-wren/earn/), and [settings](/docs/use-wren/settings/).
+After setup, open **Control center**. You can manage [accounts](/docs/use-wren/accounts/), [networks](/docs/use-wren/networks/), [activity](/docs/use-wren/activity/), [tokens](/docs/use-wren/tokens/), [Earn](/docs/use-wren/earn/), and [settings](/docs/use-wren/settings/).
 
 Review the requesting app, account, network, and request details before you approve them.
 
@@ -37,6 +37,7 @@ Review the requesting app, account, network, and request details before you appr
 - Wren reviews supported transactions, messages, typed data, permits, and permissions before the signer acts. Simulation and decoded details are evidence. They do not guarantee the result.
 - Wren can create a new encrypted local wallet or import an existing local signer. It also supports hardware and watch-only accounts. A watch-only account can inspect data but cannot sign.
 - Wren can prepare contract deployments and publish checked Solidity or Vyper source for existing contracts and confirmed Wren deployments. Source publication is public and cannot be withdrawn through Wren.
+- Activity rows open detail views. Supported transaction entries can retrieve bounded context from your configured RPC without storing transaction bodies in Activity history.
 - Companion carries browser requests and does not need your recovery phrase, private key, keystore password, or hardware-wallet PIN.
 
 ![Browser dapps reach Wren through Companion. Native apps connect directly. Wren reviews each request before the signer or network acts.](../../../assets/docs/wren-request-flow.svg)
@@ -45,7 +46,9 @@ Read [Wren features and boundaries](/docs/features/) before you rely on a featur
 
 ## Safety baseline
 
-- Download only from the [Wren release page](https://github.com/jorphex/wren/releases) and [Companion release page](https://github.com/jorphex/wren-companion/releases).
+- Download Wren only from the [Wren release page](https://github.com/jorphex/wren/releases).
+- Install Companion for Chrome or Brave from the [Chrome Web Store](https://chromewebstore.google.com/detail/wren-companion/ifimccfajfbgligbhcgfapdagpnfkbhn).
+- Use the [Companion release page](https://github.com/jorphex/wren-companion/releases) for a verified local archive or Firefox package.
 - Verify release checksums and GitHub artifact attestations before installation.
 - Enter a recovery phrase or private key only in Wren's account setup. Never enter one in Companion or a dapp page.
 - Export an encrypted Wren profile backup from **Settings** → **Recovery**. Test restoration with non-valuable accounts before you rely on the backup.

@@ -10,7 +10,7 @@ Use **Control center** → **Networks** to manage the EVM networks that Wren can
 
 :::caution[Check every network and endpoint]
 
-Wren `0.1.4` has no independent security audit. Check the chain ID, endpoint host, and connection status before you enable a network or approve a dapp-requested network. Treat endpoint data as a security and privacy decision.
+Wren `0.1.5` has no independent security audit. Check the chain ID, endpoint host, and connection status before you enable a network or approve a dapp-requested network. Treat endpoint data as a security and privacy decision.
 
 :::
 
@@ -18,9 +18,10 @@ Wren `0.1.4` has no independent security audit. Check the chain ID, endpoint hos
 
 1. Open **Control center**.
 2. Select **Networks**.
-3. Use the toggle beside a network to enable it.
-4. Open the network row and check its **RPC endpoints**.
-5. Enable at least one endpoint when its toggle is off.
+3. Select **All** to include disabled networks, or **Active** to show enabled networks.
+4. Use the toggle beside a network to enable it.
+5. Open the network row and check its **RPC endpoints**.
+6. Enable at least one endpoint when its toggle is off.
 
 Wren starts with **Mainnet** enabled. Mainnet is always enabled and cannot be removed. Other built-in networks are available from the same list and can be enabled when you need them.
 
@@ -31,7 +32,7 @@ To disable a network, use its toggle again. Wren moves a connected app that uses
 Wren does not use one wallet-wide network switch. Each connected app has its own default network route.
 
 1. Open **Control center**.
-2. Select **Connected apps**.
+2. Select **App activity**.
 3. Select the app.
 4. Select an enabled network under **Default network**.
 
@@ -44,7 +45,7 @@ If you remove or disable the network that an app uses, Wren changes that app's r
 Use a trusted chain definition and an RPC endpoint that you have checked independently.
 
 1. Open **Control center** → **Networks**.
-2. Select **Add New Chain**.
+2. Select **Add**.
 3. Enter **Network name**.
 4. Enter the numeric **Chain ID**.
 5. Enter **Native currency** and **Decimals**.

@@ -12,23 +12,32 @@ Companion is not a wallet or signer. It does not need your recovery phrase, priv
 
 :::caution[Verify the release]
 
-Download Wren Companion `0.1.2` only from the official release. Verify the archive, checksum, compatibility metadata, and GitHub artifact attestation before installation.
+Install Chrome or Brave from the official Chrome Web Store listing. For Firefox or a local installation, download Wren Companion `0.1.2` only from the official GitHub release. Verify the archive, checksum, compatibility metadata, and GitHub artifact attestation.
 
 :::
 
 ## Before you begin
 
-- [Install Wren 0.1.4](/docs/getting-started/install/), or a later desktop release that retains protocol 3, and keep the desktop application running.
+- [Install Wren 0.1.5](/docs/getting-started/install/), or a later desktop release that retains protocol 3, and keep the desktop application running.
 - Use a current Chrome, Brave, or Firefox browser.
 - Use a disposable browser profile and a test-only wallet account for the first connection.
 - Remove or disable another extension that claims to be Wren; do not pair an archive from an unofficial location.
 
-## Download the correct browser archive
+## Install from the Chrome Web Store
 
-Open the [Wren Companion `v0.1.2` release](https://github.com/jorphex/wren-companion/releases/tag/v0.1.2) and download:
+1. Open [Wren Companion in the Chrome Web Store](https://chromewebstore.google.com/detail/wren-companion/ifimccfajfbgligbhcgfapdagpnfkbhn).
+2. Install the extension in Chrome or Brave and confirm the browser prompt.
+3. Pin Wren Companion to the browser toolbar if you want its status to remain easy to reach.
 
-- `wren-companion-0.1.2-chrome.zip` for Chrome or Brave; or
-- `wren-companion-0.1.2-firefox.zip` for Firefox;
+Continue with [Compare the pairing code](#compare-the-pairing-code).
+
+## Use a release archive
+
+Firefox store review is pending. Use a verified release archive for Firefox or when store distribution is unavailable.
+
+Open the [Wren Companion `v0.1.2` release](https://github.com/jorphex/wren-companion/releases/tag/v0.1.2). Download the package for your browser and the verification files:
+
+- `wren-companion-0.1.2-chrome.zip` for Chrome or Brave, or `wren-companion-0.1.2-firefox.zip` for Firefox;
 - `wren-companion-0.1.2-compatibility.json`;
 - `SHA256SUMS` from the same release.
 
@@ -46,13 +55,13 @@ On Windows, calculate the same hash in PowerShell:
 
 Use the Firefox filename instead when installing for Firefox. The calculated hash must exactly match the archive's entry in `SHA256SUMS`. Also verify the GitHub artifact attestation.
 
-Check that the compatibility file names Companion `0.1.2` and the archive that you downloaded. It must use protocol 3 and name the official Wren repository, `main` branch, and minimum desktop commit. Wren `0.1.4` satisfies that minimum. Your installed desktop commit must be the listed commit or a later commit on that branch.
+Check that the compatibility file names Companion `0.1.2` and the archive that you downloaded. It must use protocol 3 and name the official Wren repository, `main` branch, and minimum desktop commit. Wren `0.1.5` satisfies that minimum. Your installed desktop commit must be the listed commit or a later commit on that branch.
 
 Stop if the archive, checksum, compatibility metadata, repository, or attested source does not match.
 
 Extract the ZIP into its own directory. Chrome and Firefox packages have different background manifests and are not interchangeable.
 
-## Load Companion in Chrome or Brave
+### Load the Chrome archive locally
 
 1. Open `chrome://extensions` in Chrome or `brave://extensions` in Brave.
 2. Enable **Developer mode**.
@@ -60,7 +69,7 @@ Extract the ZIP into its own directory. Chrome and Firefox packages have differe
 4. Choose the directory where you extracted the Chrome archive.
 5. Pin Wren Companion to the browser toolbar if you want its status to remain easy to reach.
 
-## Load Companion in Firefox
+### Load the Firefox archive temporarily
 
 1. Open `about:debugging#/runtime/this-firefox`.
 2. Select **Load Temporary Add-on**.

@@ -41,6 +41,7 @@ export default defineConfig({
           label: 'Use Wren',
           items: [
             { slug: 'docs/use-wren/accounts' },
+            { slug: 'docs/use-wren/activity' },
             { slug: 'docs/use-wren/networks' },
             { slug: 'docs/use-wren/tokens' },
             { slug: 'docs/use-wren/earn' },

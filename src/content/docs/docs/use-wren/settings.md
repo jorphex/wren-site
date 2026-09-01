@@ -64,7 +64,7 @@ Each paired browser appears as **Paired companion** with its pairing fingerprint
 
 1. Find the browser entry under **Browser companions**.
 2. Select **Revoke**.
-3. Select **Confirm revoke**.
+3. Select **Revoke pairing**.
 
 Revocation disconnects that Companion pairing. A new pairing code is required to connect it again. See [Install and pair Wren Companion](/docs/getting-started/companion/) for the pairing boundary.
 
@@ -85,7 +85,7 @@ When operating-system credential protection is available, enter a key containing
 
 ## Export an encrypted backup
 
-The export includes accounts, names, networks, contacts, permissions, settings, and signer records. It leaves out live balances, rates, and pending requests.
+The export includes accounts, names, networks, contacts, permissions, settings, and signer records. It leaves out live balances, rates, pending requests, and the Activity transaction-reference ledger.
 
 1. Under **Recovery**, select **Export backup**.
 2. Enter a new **Backup password** with at least eight characters. Prefer a longer, unique password.
