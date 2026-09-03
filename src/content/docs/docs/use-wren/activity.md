@@ -14,7 +14,9 @@ Each account has an **Activity** section. It records completed wallet requests w
 2. Select an Activity row, or select **View all activity** first.
 3. Check the type, result, app, network, account, and exact times.
 
-For transactions, Wallet Calls, and EIP-7702 revocations, Wren can request bounded context from the configured RPC. It checks the retained transaction hash, sending account, and canonical block when available. The detail can show the native value, recipient or contract, bounded call context, and explorer actions. Wren labels partial or unavailable evidence instead of reconstructing or guessing it.
+For transactions, Wallet Calls, and EIP-7702 revocations, Wren can request bounded context from the configured RPC. It recovers supported methods and transfers from transaction data and confirmed receipts. Local calldata decoding is available when remote metadata is slow or unavailable. Wrapped-native deposits and withdrawals show the related asset changes.
+
+Wren checks the retained transaction hash, sending account, and canonical block when available. The detail can show the native value, recipient or contract, bounded call context, and explorer actions. Wren labels partial or unavailable evidence instead of guessing.
 
 The RPC receives the transaction lookup. Wren does not use a Wren backend for this action.
 

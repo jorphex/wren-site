@@ -10,7 +10,7 @@ Use **Control center** → **Accounts** to add and manage accounts. Wren keeps a
 
 :::caution[Security status]
 
-Wren `0.1.5` has no independent security audit. Use test accounts with no valuable assets while you evaluate it. Review the current [signer and platform support](https://github.com/jorphex/wren/blob/main/HARDWARE_SUPPORT.md) before you rely on a hardware signer.
+Wren `0.1.6` has no independent security audit. Use test accounts with no valuable assets while you evaluate it. Review the current [signer and platform support](https://github.com/jorphex/wren/blob/main/HARDWARE_SUPPORT.md) before you rely on a hardware signer.
 
 :::
 
@@ -69,6 +69,8 @@ To manage the current account, use the controls next to its address:
 - Select **Show account address QR code** to display the address as a QR code.
 - Select **Update account name**, edit **Account name**, and press Enter or leave the field to save the name.
 
+You can also open the account **Settings**, select **Rename account**, and edit **Account name**. A local name stays separate from an ENS name.
+
 Wren may display an ENS name in place of the local name when ENS data is available. Verify the full address before you send or approve a request.
 
 ## Manage app access
@@ -86,6 +88,8 @@ Revocation affects future requests for that account. It does not delete the acco
 ## Unlock or remove a signer
 
 An imported local signer can be locked while its account remains visible.
+
+When you select a locked account, Wren opens the required password, device PIN, passphrase, or reconnect flow. A ready software or watch-only account switches directly. A ready hardware account opens signer management.
 
 1. Open **Control center** → **Accounts**.
 2. Select the signer card.

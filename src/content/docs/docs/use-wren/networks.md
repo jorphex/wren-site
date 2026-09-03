@@ -10,7 +10,7 @@ Use **Control center** → **Networks** to manage the EVM networks that Wren can
 
 :::caution[Check every network and endpoint]
 
-Wren `0.1.5` has no independent security audit. Check the chain ID, endpoint host, and connection status before you enable a network or approve a dapp-requested network. Treat endpoint data as a security and privacy decision.
+Wren `0.1.6` has no independent security audit. Check the chain ID, endpoint host, and connection status before you enable a network or approve a dapp-requested network. Treat endpoint data as a security and privacy decision.
 
 :::
 
@@ -32,11 +32,11 @@ To disable a network, use its toggle again. Wren moves a connected app that uses
 Wren does not use one wallet-wide network switch. Each connected app has its own default network route.
 
 1. Open **Control center**.
-2. Select **App activity**.
+2. Select **Connected apps**.
 3. Select the app.
 4. Select an enabled network under **Default network**.
 
-The app keeps this route until you change it. A dapp request that names a different chain can use that chain only when the chain is enabled in Wren. A disabled or disconnected chain cannot service the request.
+The app keeps this route until you change it. A known app can switch its route to another enabled chain without another approval screen or account exposure. An unknown app, an unknown chain, or a disabled chain fails closed.
 
 If you remove or disable the network that an app uses, Wren changes that app's route to **Mainnet**. Verify the route before you approve the next request.
 

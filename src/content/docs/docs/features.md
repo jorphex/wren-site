@@ -10,9 +10,9 @@ This page explains Wren's product boundary. It does not replace the exact protoc
 
 :::caution[Security status]
 
-Wren `0.1.5` and Wren Companion `0.1.2` are published releases. Wren has no independent security audit. Linux x64 is the qualified desktop target. Windows x64 is an unsigned, unqualified preview. macOS x64 and arm64 are ad-hoc signed, unnotarized, and unqualified previews. Use test accounts with no valuable assets until you have evaluated the releases for yourself.
+Wren `0.1.6` and Wren Companion `0.1.2` are published releases. Wren has no independent security audit. Linux x64 is the qualified desktop target. Windows x64 is an unsigned, unqualified preview. macOS x64 and arm64 are ad-hoc signed, unnotarized, and unqualified previews. Use test accounts with no valuable assets until you have evaluated the releases for yourself.
 
-Check the [Wren 0.1.5 release](https://github.com/jorphex/wren/releases/tag/v0.1.5) and [Companion 0.1.2 release](https://github.com/jorphex/wren-companion/releases/tag/v0.1.2) for the artifacts, checksums, compatibility metadata, and source-bound attestations.
+Check the [Wren 0.1.6 release](https://github.com/jorphex/wren/releases/tag/v0.1.6) and [Companion 0.1.2 release](https://github.com/jorphex/wren-companion/releases/tag/v0.1.2) for the artifacts, checksums, compatibility metadata, and source-bound attestations.
 
 :::
 
@@ -37,7 +37,7 @@ Simulation is evidence from a configured RPC. It is not a guarantee of execution
 
 Support depends on the request and signer. Wren rejects unsupported transaction types and fields instead of silently rewriting them. Type-3 blob transactions are unsupported. EIP-5792 calls are sequential and non-atomic. Permit and SIWE support is review and consent support; Wren does not authenticate a web session or execute a permit contract for you.
 
-Permit reviews show the account, token, amount, network, spender, expiry, and signature type. Token approval reviews keep the spender, expiry, limit, and warning together. Wallet Calls reviews show the starting nonce, maximum batch fee, and transaction fee controls.
+Permit reviews show the account, token, amount, network, spender, expiry, and signature type. Token approval reviews keep the requested, custom, unlimited, and revoke choices with the resulting allowance. Transaction reviews group the decoded action, estimated asset changes, editable fees and nonces, contract data, and signer action. Wallet Calls reviews show the starting nonce, maximum batch fee, and transaction fee controls.
 
 See [How Wren protects approvals](https://github.com/jorphex/wren/blob/main/THREAT_MODEL.md), [RPC compatibility](https://github.com/jorphex/wren/blob/main/RPC_COMPATIBILITY.md), and [supported standards](https://github.com/jorphex/wren/blob/main/SUPPORTED_EIPS.md) for the exact method boundary.
 
@@ -55,7 +55,7 @@ Wren gives each connected app a separate permission record. A permission can bin
 
 An app's network route is separate from every other app's route. An authorized app can switch its own route to an enabled network. The switch does not change another app's route. Wren deliberately has no shared wallet-wide network selection.
 
-Open **Control center** → **App activity** to review retained access and default networks. Revoke access when an app no longer needs it. A browser origin and an authenticated local client have different source identities and revocation paths.
+Open **Control center** → **Connected apps** to review retained access and default networks. Revoke access when an app no longer needs it. A browser origin and an authenticated local client have different source identities and revocation paths.
 
 ![Two apps use Wren at the same time. Each app has a separate account permission and network route. There is no shared network switch.](../../../assets/docs/wren-per-app-routes.svg)
 
@@ -77,7 +77,7 @@ Chrome and Brave can install Companion from the [Chrome Web Store](https://chrom
 
 ## Activity details
 
-Select an Activity row to see its type, result, app, network, account, and exact times. Supported transaction entries can request bounded context from the configured RPC. Wren checks the retained hash, sending account, and canonical block when available. It labels partial or unavailable evidence instead of guessing.
+Select an Activity row to see its type, result, app, network, account, and exact times. Supported transaction entries can recover methods and transfers from transaction data and confirmed receipts. Wren uses local calldata decoding when remote metadata is unavailable. It checks the retained hash, sending account, and canonical block when available, and labels incomplete evidence instead of guessing.
 
 Wren keeps a small reference ledger for the 90-day Activity window. It stores the activity identity, account, origin, chain, submitted hashes, and an optional canonical block reference. It does not store fetched transaction bodies, calldata, opaque decoded bytes, recipients, or amounts. The ledger is not included in profile backups. See [Review Activity](/docs/use-wren/activity/) for the user controls and clearing boundary.
 

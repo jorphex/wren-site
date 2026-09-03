@@ -16,24 +16,25 @@ Simulation, decoded labels, and guardrails provide review evidence. They do not 
 
 ## Current releases
 
-Wren `0.1.5` was released August 31, 2026. Wren Companion `0.1.2` was released August 22, 2026.
+Wren `0.1.6` was released September 3, 2026. Wren Companion `0.1.2` was released August 22, 2026.
 
-The current compatible pair is Wren `0.1.5` with Wren Companion `0.1.2`. Version numbers do not need to match. Install Wren `0.1.5` before you install or update Companion `0.1.2`.
+The current compatible pair is Wren `0.1.6` with Wren Companion `0.1.2`. Version numbers do not need to match. Install Wren `0.1.6` before you install or update Companion `0.1.2`.
 
-### Wren 0.1.5
+### Wren 0.1.6
 
-Wren `0.1.5` improves Activity, Control Center, wallet, and request-review workflows.
+Wren `0.1.6` makes transaction reviews clearer and restores direct access to locked accounts.
 
-- Opens each Activity row as a keyboard-accessible detail view. Supported entries retrieve bounded context from the configured RPC. Wren checks retained identifiers and labels incomplete evidence instead of guessing.
-- Keeps limited transaction references for the 90-day Activity window. It excludes fetched transaction bodies, calldata, opaque bytes, recipients, and amounts from Activity history and profile backups. An unchanged transaction does not recreate cleared Activity, but a newer update can appear again.
-- Adds persistent Control Center navigation, clearer signing and watch-only account groups, and direct account and network actions.
-- Adds a wallet portfolio summary, direct Send, address Copy and QR actions, a clearer next-request summary, and direct Chrome Web Store routing for Companion.
-- Clarifies permit, token approval, Wallet Calls, and EIP-7702 revocation reviews.
-- Uses a consistent visual hierarchy across the dashboard, wallet, requests, balances, and management views.
-- Restores legacy Frame colors during migration and merges mixed-case account keys without losing account records.
+- Groups the decoded action, estimated asset changes, fees, nonce, contract data, and signer actions in transaction reviews. **Raw data** excludes internal Wren bookkeeping.
+- Shows requested, custom, unlimited, and revoke choices together in token approval reviews. The selected allowance remains visible.
+- Shows submitted, confirming, and confirmed states with hash, explorer, cancel, and speed-up actions when they apply.
+- Recovers supported methods and transfers in Activity from transaction data and confirmed receipts. Local calldata decoding remains available when remote metadata is unavailable.
+- Restores account renaming. Local names remain separate from ENS names.
+- Opens the required password, device PIN, passphrase, or reconnect flow when you select a locked account.
+- Renames **App activity** to **Connected apps** and uses one access rule for the badge and list.
+- Lets a known app switch to another enabled chain without another approval screen or account exposure. Unknown apps and unavailable chains fail closed.
 - Keeps Linux x64 qualified, Windows x64 unsigned and unqualified, and macOS x64/arm64 ad-hoc signed, unnotarized, and unqualified.
 
-[Download Wren 0.1.5](https://github.com/jorphex/wren/releases/tag/v0.1.5). Verify the applicable `SHA256SUMS` entry and GitHub build and SBOM attestations before installation. Checksums and attestations do not create a trusted Windows or Apple publisher.
+[Download Wren 0.1.6](https://github.com/jorphex/wren/releases/tag/v0.1.6). Verify the applicable `SHA256SUMS` entry and GitHub build and SBOM attestations before installation. Checksums and attestations do not create a trusted Windows or Apple publisher.
 
 ### Wren Companion 0.1.2
 
@@ -48,11 +49,30 @@ Wren Companion `0.1.2` improves connection reliability on Etherscan, BaseScan, a
 
 [Install Wren Companion 0.1.2 from the Chrome Web Store](https://chromewebstore.google.com/detail/wren-companion/ifimccfajfbgligbhcgfapdagpnfkbhn) for Chrome or Brave. Firefox store review is pending. Use the [Companion 0.1.2 release](https://github.com/jorphex/wren-companion/releases/tag/v0.1.2) for a verified Firefox or local archive.
 
+## Wren 0.1.5
+
+Released August 31, 2026.
+
+Wren `0.1.6` supersedes this release.
+
+Wren `0.1.5` improves Activity, Control Center, wallet, and request-review workflows.
+
+- Opens each Activity row as a keyboard-accessible detail view. Supported entries retrieve bounded context from the configured RPC. Wren checks retained identifiers and labels incomplete evidence instead of guessing.
+- Keeps limited transaction references for the 90-day Activity window. It excludes fetched transaction bodies, calldata, opaque bytes, recipients, and amounts from Activity history and profile backups. An unchanged transaction does not recreate cleared Activity, but a newer update can appear again.
+- Adds persistent Control Center navigation, clearer signing and watch-only account groups, and direct account and network actions.
+- Adds a wallet portfolio summary, direct Send, address Copy and QR actions, a clearer next-request summary, and direct Chrome Web Store routing for Companion.
+- Clarifies permit, token approval, Wallet Calls, and EIP-7702 revocation reviews.
+- Uses a consistent visual hierarchy across the dashboard, wallet, requests, balances, and management views.
+- Restores legacy Frame colors during migration and merges mixed-case account keys without losing account records.
+- Keeps Linux x64 qualified, Windows x64 unsigned and unqualified, and macOS x64/arm64 ad-hoc signed, unnotarized, and unqualified.
+
+[Download Wren 0.1.5](https://github.com/jorphex/wren/releases/tag/v0.1.5). Verify the applicable `SHA256SUMS` entry and GitHub build and SBOM attestations before installation. Checksums and attestations do not create a trusted Windows or Apple publisher.
+
 ## Wren 0.1.4
 
 Released August 24, 2026.
 
-Wren `0.1.5` supersedes this release.
+Wren `0.1.6` supersedes this release.
 
 Wren `0.1.4` is an urgent transaction-reliability release for Base and other recognized OP Stack networks.
 
@@ -71,7 +91,7 @@ Wren `0.1.4` is an urgent transaction-reliability release for Base and other rec
 
 Released August 22, 2026.
 
-Wren `0.1.5` supersedes this release. Upgrade before you retry an OP Stack Send that remains at **Funding check unavailable**.
+Wren `0.1.6` supersedes this release. Upgrade before you retry an OP Stack Send that remains at **Funding check unavailable**.
 
 Wren `0.1.3` adds local wallet creation and contract tools. It also makes transactions, browser connections, permissions, and restart recovery clearer and more reliable.
 
