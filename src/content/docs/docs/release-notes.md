@@ -16,11 +16,42 @@ Simulation, decoded labels, and guardrails provide review evidence. They do not 
 
 ## Current releases
 
-Wren `0.1.6` was released September 3, 2026. Wren Companion `0.1.2` was released August 22, 2026.
+Wren `0.1.7` was released September 4, 2026. Wren Companion `0.1.2` was released August 22, 2026.
 
-The current compatible pair is Wren `0.1.6` with Wren Companion `0.1.2`. Version numbers do not need to match. Install Wren `0.1.6` before you install or update Companion `0.1.2`.
+The current compatible pair is Wren `0.1.7` with Wren Companion `0.1.2`. Version numbers do not need to match. Install Wren `0.1.7` before you install or update Companion `0.1.2`.
 
-### Wren 0.1.6
+### Wren 0.1.7
+
+Wren `0.1.7` keeps transaction reviews stable during background updates. It also improves token approval changes and contract source verification.
+
+- Keeps a usable transaction review in place while Wren refreshes fees and execution checks. A failed background refresh does not replace the usable result.
+- Normalizes valid transaction quantities, including values with leading zeroes, before it sends them to an RPC endpoint.
+- Refreshes gas and fee evidence for the request that you recheck. A failed check stays recoverable and does not show a raw RPC response.
+- Keeps the token approval editor open when you select the requested, custom, unlimited, or revoke amount. It shows the selected allowance immediately.
+- Accepts integrity-bearing Vyper 0.4.3 `solc_json` artifacts after it checks envelope metadata and each source checksum.
+- Accepts checksummed contract addresses. A matching saved verification submission opens its existing status instead of starting another publication attempt.
+- Keeps Linux x64 qualified, Windows x64 unsigned and unqualified, and macOS x64/arm64 ad-hoc signed, unnotarized, and unqualified.
+
+[Download Wren 0.1.7](https://github.com/jorphex/wren/releases/tag/v0.1.7). Verify the applicable `SHA256SUMS` entry and GitHub build and SBOM attestations before installation. Checksums and attestations do not create a trusted Windows or Apple publisher.
+
+### Wren Companion 0.1.2
+
+Wren Companion `0.1.2` improves connection reliability on Etherscan, BaseScan, and other Ethereum apps.
+
+- Connects on apps that also check for MetaMask compatibility while continuing to identify itself as Wren.
+- Shows the active network and the site's Wren or MetaMask setting more reliably, including on pages that use embedded frames.
+- Handles sites that request a network switch before account access, including BaseScan's Base network flow.
+- Keeps site setting changes tied to the exact requesting page in Chrome and Firefox.
+- Keeps the last known network list visible during brief local disconnects or browser background restarts. It does not store accounts, requests, transactions, or page content in that list.
+- Retains EIP-1193, EIP-6963, mutually authenticated pairing protocol 3, and the pairing and page-isolation boundaries from `0.1.1`.
+
+[Install Wren Companion 0.1.2 from the Chrome Web Store](https://chromewebstore.google.com/detail/wren-companion/ifimccfajfbgligbhcgfapdagpnfkbhn) for Chrome or Brave. Firefox store review is pending. Use the [Companion 0.1.2 release](https://github.com/jorphex/wren-companion/releases/tag/v0.1.2) for a verified Firefox or local archive.
+
+## Wren 0.1.6
+
+Released September 3, 2026.
+
+Wren `0.1.7` supersedes this release.
 
 Wren `0.1.6` makes transaction reviews clearer and restores direct access to locked accounts.
 
@@ -36,24 +67,11 @@ Wren `0.1.6` makes transaction reviews clearer and restores direct access to loc
 
 [Download Wren 0.1.6](https://github.com/jorphex/wren/releases/tag/v0.1.6). Verify the applicable `SHA256SUMS` entry and GitHub build and SBOM attestations before installation. Checksums and attestations do not create a trusted Windows or Apple publisher.
 
-### Wren Companion 0.1.2
-
-Wren Companion `0.1.2` improves connection reliability on Etherscan, BaseScan, and other Ethereum apps.
-
-- Connects on apps that also check for MetaMask compatibility while continuing to identify itself as Wren.
-- Shows the active network and the site's Wren or MetaMask setting more reliably, including on pages that use embedded frames.
-- Handles sites that request a network switch before account access, including BaseScan's Base network flow.
-- Keeps site setting changes tied to the exact requesting page in Chrome and Firefox.
-- Keeps the last known network list visible during brief local disconnects or browser background restarts. It does not store accounts, requests, transactions, or page content in that list.
-- Retains EIP-1193, EIP-6963, mutually authenticated pairing protocol 3, and the pairing and page-isolation boundaries from `0.1.1`.
-
-[Install Wren Companion 0.1.2 from the Chrome Web Store](https://chromewebstore.google.com/detail/wren-companion/ifimccfajfbgligbhcgfapdagpnfkbhn) for Chrome or Brave. Firefox store review is pending. Use the [Companion 0.1.2 release](https://github.com/jorphex/wren-companion/releases/tag/v0.1.2) for a verified Firefox or local archive.
-
 ## Wren 0.1.5
 
 Released August 31, 2026.
 
-Wren `0.1.6` supersedes this release.
+Wren `0.1.7` supersedes this release.
 
 Wren `0.1.5` improves Activity, Control Center, wallet, and request-review workflows.
 
@@ -72,7 +90,7 @@ Wren `0.1.5` improves Activity, Control Center, wallet, and request-review workf
 
 Released August 24, 2026.
 
-Wren `0.1.6` supersedes this release.
+Wren `0.1.7` supersedes this release.
 
 Wren `0.1.4` is an urgent transaction-reliability release for Base and other recognized OP Stack networks.
 
@@ -91,7 +109,7 @@ Wren `0.1.4` is an urgent transaction-reliability release for Base and other rec
 
 Released August 22, 2026.
 
-Wren `0.1.6` supersedes this release. Upgrade before you retry an OP Stack Send that remains at **Funding check unavailable**.
+Wren `0.1.7` supersedes this release. Upgrade before you retry an OP Stack Send that remains at **Funding check unavailable**.
 
 Wren `0.1.3` adds local wallet creation and contract tools. It also makes transactions, browser connections, permissions, and restart recovery clearer and more reliable.
 

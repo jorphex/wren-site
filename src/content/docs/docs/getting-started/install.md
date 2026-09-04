@@ -10,7 +10,7 @@ This tutorial takes you from a verified Wren package to a running wallet with a 
 
 :::caution[Verify the release]
 
-Download Wren `0.1.6` only from the official release. Verify the checksum and GitHub build and SBOM attestations before you run a package. The Linux packages and Windows preview are unsigned. The macOS previews are ad-hoc signed and unnotarized. Checksums and attestations do not create a trusted Windows or Apple publisher.
+Download Wren `0.1.7` only from the official release. Verify the checksum and GitHub build and SBOM attestations before you run a package. The Linux packages and Windows preview are unsigned. The macOS previews are ad-hoc signed and unnotarized. Checksums and attestations do not create a trusted Windows or Apple publisher.
 
 :::
 
@@ -29,13 +29,13 @@ If you intend to import an existing Frame profile, read [Import a Frame profile]
 
 ## Download and verify Wren
 
-Open the [Wren `v0.1.6` release](https://github.com/jorphex/wren/releases/tag/v0.1.6) and download:
+Open the [Wren `v0.1.7` release](https://github.com/jorphex/wren/releases/tag/v0.1.7) and download:
 
-- `Wren-0.1.6.AppImage` for a portable Linux application;
-- `wren_0.1.6_amd64.deb` for a Linux system installation;
-- `Wren-Setup-0.1.6-unsigned-x64.exe` for the Windows x64 preview;
-- `Wren-0.1.6-macos-arm64-unnotarized.dmg` for Apple Silicon;
-- `Wren-0.1.6-macos-x64-unnotarized.dmg` for an Intel Mac; and
+- `Wren-0.1.7.AppImage` for a portable Linux application;
+- `wren_0.1.7_amd64.deb` for a Linux system installation;
+- `Wren-Setup-0.1.7-unsigned-x64.exe` for the Windows x64 preview;
+- `Wren-0.1.7-macos-arm64-unnotarized.dmg` for Apple Silicon;
+- `Wren-0.1.7-macos-x64-unnotarized.dmg` for an Intel Mac; and
 - `SHA256SUMS` from the same release.
 
 ### Verify a Linux package
@@ -43,13 +43,13 @@ Open the [Wren `v0.1.6` release](https://github.com/jorphex/wren/releases/tag/v0
 Keep the package and checksum file in the same directory. Calculate the package hash:
 
 ```bash
-sha256sum Wren-0.1.6.AppImage
+sha256sum Wren-0.1.7.AppImage
 ```
 
 For the deb package, use:
 
 ```bash
-sha256sum wren_0.1.6_amd64.deb
+sha256sum wren_0.1.7_amd64.deb
 ```
 
 The calculated hash must exactly match that package's entry in `SHA256SUMS`. Also inspect the GitHub artifact attestation attached to the release. Stop if a name, hash, release version, repository, or attested source commit does not match.
@@ -58,10 +58,10 @@ The packages are unsigned. A successful installation prompt is not a substitute 
 
 ### Verify the Windows preview
 
-Keep `Wren-Setup-0.1.6-unsigned-x64.exe` and `SHA256SUMS` in the same directory. Open PowerShell in that directory and run:
+Keep `Wren-Setup-0.1.7-unsigned-x64.exe` and `SHA256SUMS` in the same directory. Open PowerShell in that directory and run:
 
 ```powershell
-$Installer = Get-Item '.\Wren-Setup-0.1.6-unsigned-x64.exe'
+$Installer = Get-Item '.\Wren-Setup-0.1.7-unsigned-x64.exe'
 $Expected = (Get-Content '.\SHA256SUMS' | Where-Object { $_ -like "*  $($Installer.Name)" }).Split()[0]
 $Actual = (Get-FileHash -Algorithm SHA256 $Installer).Hash.ToLowerInvariant()
 if ($Actual -ne $Expected) { throw 'Checksum does not match' }
@@ -75,19 +75,19 @@ Also inspect the GitHub artifact attestation. Stop if the filename, hash, releas
 Keep the matching DMG and `SHA256SUMS` in the same directory. For Apple Silicon, open Terminal in that directory and run:
 
 ```bash
-file='Wren-0.1.6-macos-arm64-unnotarized.dmg'
+file='Wren-0.1.7-macos-arm64-unnotarized.dmg'
 grep "  $file$" SHA256SUMS | shasum -a 256 --check
 ```
 
-Use `Wren-0.1.6-macos-x64-unnotarized.dmg` as `file` on an Intel Mac. The result must show `OK`. Also inspect the GitHub build and SBOM attestations. Stop if the filename, checksum, release version, repository, or attested source commit does not match.
+Use `Wren-0.1.7-macos-x64-unnotarized.dmg` as `file` on an Intel Mac. The result must show `OK`. Also inspect the GitHub build and SBOM attestations. Stop if the filename, checksum, release version, repository, or attested source commit does not match.
 
 ## Run the AppImage
 
 Make the AppImage executable, then run it:
 
 ```bash
-chmod +x Wren-0.1.6.AppImage
-./Wren-0.1.6.AppImage
+chmod +x Wren-0.1.7.AppImage
+./Wren-0.1.7.AppImage
 ```
 
 Keep the AppImage somewhere you control if you plan to continue launching Wren from it.
@@ -97,14 +97,14 @@ Keep the AppImage somewhere you control if you plan to continue launching Wren f
 Install the package using `apt`:
 
 ```bash
-sudo apt install ./wren_0.1.6_amd64.deb
+sudo apt install ./wren_0.1.7_amd64.deb
 ```
 
 Launch Wren from your desktop application menu after installation.
 
 ## Install the Windows x64 preview
 
-`Wren-Setup-0.1.6-unsigned-x64.exe` is intentionally unsigned. Windows may report an unknown publisher or show Microsoft Defender SmartScreen. The absence of a warning does not make the installer trusted.
+`Wren-Setup-0.1.7-unsigned-x64.exe` is intentionally unsigned. Windows may report an unknown publisher or show Microsoft Defender SmartScreen. The absence of a warning does not make the installer trusted.
 
 After you verify the checksum and attestation, run the installer only if you accept the preview boundary. It installs Wren for the current user and opens it without a setup wizard. Windows x64 has native package checks, but it is not a platform-qualified target. Review the [Windows preview checklist](https://github.com/jorphex/wren/blob/main/WINDOWS_RELEASE_QUALIFICATION.md) for the tested boundary.
 
@@ -133,7 +133,7 @@ Wren does not read or share Frame's active profile by default. Its import makes 
 For the AppImage:
 
 ```bash
-./Wren-0.1.6.AppImage --import-frame-profile
+./Wren-0.1.7.AppImage --import-frame-profile
 ```
 
 For the installed deb:

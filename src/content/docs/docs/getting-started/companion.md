@@ -18,7 +18,7 @@ Install Chrome or Brave from the official Chrome Web Store listing. For Firefox 
 
 ## Before you begin
 
-- [Install Wren 0.1.6](/docs/getting-started/install/), or a later desktop release that retains protocol 3, and keep the desktop application running.
+- [Install Wren 0.1.7](/docs/getting-started/install/), or a later desktop release that retains protocol 3, and keep the desktop application running.
 - Use a current Chrome, Brave, or Firefox browser.
 - Use a disposable browser profile and a test-only wallet account for the first connection.
 - Remove or disable another extension that claims to be Wren; do not pair an archive from an unofficial location.
@@ -55,7 +55,7 @@ On Windows, calculate the same hash in PowerShell:
 
 Use the Firefox filename instead when installing for Firefox. The calculated hash must exactly match the archive's entry in `SHA256SUMS`. Also verify the GitHub artifact attestation.
 
-Check that the compatibility file names Companion `0.1.2` and the archive that you downloaded. It must use protocol 3 and name the official Wren repository, `main` branch, and minimum desktop commit. Wren `0.1.6` satisfies that minimum. Your installed desktop commit must be the listed commit or a later commit on that branch.
+Check that the compatibility file names Companion `0.1.2` and the archive that you downloaded. It must use protocol 3 and name the official Wren repository, `main` branch, and minimum desktop commit. Wren `0.1.7` satisfies that minimum. Your installed desktop commit must be the listed commit or a later commit on that branch.
 
 Stop if the archive, checksum, compatibility metadata, repository, or attested source does not match.
 

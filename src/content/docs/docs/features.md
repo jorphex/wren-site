@@ -10,9 +10,9 @@ This page explains Wren's product boundary. It does not replace the exact protoc
 
 :::caution[Security status]
 
-Wren `0.1.6` and Wren Companion `0.1.2` are published releases. Wren has no independent security audit. Linux x64 is the qualified desktop target. Windows x64 is an unsigned, unqualified preview. macOS x64 and arm64 are ad-hoc signed, unnotarized, and unqualified previews. Use test accounts with no valuable assets until you have evaluated the releases for yourself.
+Wren `0.1.7` and Wren Companion `0.1.2` are published releases. Wren has no independent security audit. Linux x64 is the qualified desktop target. Windows x64 is an unsigned, unqualified preview. macOS x64 and arm64 are ad-hoc signed, unnotarized, and unqualified previews. Use test accounts with no valuable assets until you have evaluated the releases for yourself.
 
-Check the [Wren 0.1.6 release](https://github.com/jorphex/wren/releases/tag/v0.1.6) and [Companion 0.1.2 release](https://github.com/jorphex/wren-companion/releases/tag/v0.1.2) for the artifacts, checksums, compatibility metadata, and source-bound attestations.
+Check the [Wren 0.1.7 release](https://github.com/jorphex/wren/releases/tag/v0.1.7) and [Companion 0.1.2 release](https://github.com/jorphex/wren-companion/releases/tag/v0.1.2) for the artifacts, checksums, compatibility metadata, and source-bound attestations.
 
 :::
 
@@ -37,7 +37,7 @@ Simulation is evidence from a configured RPC. It is not a guarantee of execution
 
 Support depends on the request and signer. Wren rejects unsupported transaction types and fields instead of silently rewriting them. Type-3 blob transactions are unsupported. EIP-5792 calls are sequential and non-atomic. Permit and SIWE support is review and consent support; Wren does not authenticate a web session or execute a permit contract for you.
 
-Permit reviews show the account, token, amount, network, spender, expiry, and signature type. Token approval reviews keep the requested, custom, unlimited, and revoke choices with the resulting allowance. Transaction reviews group the decoded action, estimated asset changes, editable fees and nonces, contract data, and signer action. Wallet Calls reviews show the starting nonce, maximum batch fee, and transaction fee controls.
+Permit reviews show the account, token, amount, network, spender, expiry, and signature type. Token approval reviews keep the requested, custom, unlimited, and revoke choices with the resulting allowance. The editor stays open while Wren refreshes the review. Transaction reviews group the decoded action, estimated asset changes, editable fees and nonces, contract data, and signer action. A failed background refresh does not replace a usable review result. Wallet Calls reviews show the starting nonce, maximum batch fee, and transaction fee controls.
 
 See [How Wren protects approvals](https://github.com/jorphex/wren/blob/main/THREAT_MODEL.md), [RPC compatibility](https://github.com/jorphex/wren/blob/main/RPC_COMPATIBILITY.md), and [supported standards](https://github.com/jorphex/wren/blob/main/SUPPORTED_EIPS.md) for the exact method boundary.
 
@@ -47,7 +47,7 @@ Wren can create an encrypted local wallet with a new 12-word recovery phrase or 
 
 The dashboard can prepare a contract deployment from complete EVM creation data and an optional native value. Wren does not compile Solidity or Vyper in this tool. It gathers gas, simulation, and nonce evidence from the configured RPC, then uses the ordinary transaction review, signer, and single-broadcast lifecycle.
 
-Wren can also publish Solidity or Vyper source for an existing contract or a confirmed Wren deployment. It reads supported compiler, Foundry, or Hardhat build files locally and checks them against the selected chain and contract. Sourcify is the primary publication service. Etherscan V2 is an optional fallback on supported networks. Published source is public, and Wren cannot withdraw it.
+Wren can also publish Solidity or Vyper source for an existing contract or a confirmed Wren deployment. It reads supported compiler, Foundry, or Hardhat build files locally and checks them against the selected chain and contract. It accepts integrity-bearing Vyper 0.4.3 `solc_json` artifacts and checks each source checksum. A matching saved submission opens its status. Sourcify is the primary publication service. Etherscan V2 is an optional fallback on supported networks. Published source is public, and Wren cannot withdraw it.
 
 ## Per-app permissions and network routes
 
