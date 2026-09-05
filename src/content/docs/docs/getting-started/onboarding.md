@@ -82,4 +82,4 @@ The final screen says **Ready to begin**.
 1. Review the reminder to review each request before anything is signed.
 2. Select **Open Wren**.
 
-Wren closes the tutorial and opens the **Control center**. Its persistent navigation provides **Home**, **Accounts**, **Networks**, **Connected apps**, and **Settings**. Wren is ready for local tools. Use [Wren Companion](/docs/getting-started/companion/) when a browser dapp needs a browser wallet.
+Wren closes the tutorial. On first launch, read the release-status notice and select **Done** to open **Accounts** in the **Control center**. Add an account if you have not added one. Its persistent navigation provides **Home**, **Accounts**, **Networks**, **Connected apps**, and **Settings**. Wren is ready for native applications. Use [Wren Companion](/docs/getting-started/companion/) when a browser dapp needs a browser wallet.

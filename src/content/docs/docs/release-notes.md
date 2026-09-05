@@ -16,23 +16,23 @@ Simulation, decoded labels, and guardrails provide review evidence. They do not 
 
 ## Current releases
 
-Wren `0.1.7` was released September 4, 2026. Wren Companion `0.1.2` was released August 22, 2026.
+Wren `0.1.8` was released September 5, 2026. Wren Companion `0.1.2` was released August 22, 2026.
 
-The current compatible pair is Wren `0.1.7` with Wren Companion `0.1.2`. Version numbers do not need to match. Install Wren `0.1.7` before you install or update Companion `0.1.2`.
+The current compatible pair is Wren `0.1.8` with Wren Companion `0.1.2`. Version numbers do not need to match. Install Wren `0.1.8` before you install or update Companion `0.1.2`.
 
-### Wren 0.1.7
+### Wren 0.1.8
 
-Wren `0.1.7` keeps transaction reviews stable during background updates. It also improves token approval changes and contract source verification.
+Wren `0.1.8` uses shorter text and clearer transaction states. Full and compact windows are easier to read and use.
 
-- Keeps a usable transaction review in place while Wren refreshes fees and execution checks. A failed background refresh does not replace the usable result.
-- Normalizes valid transaction quantities, including values with leading zeroes, before it sends them to an RPC endpoint.
-- Refreshes gas and fee evidence for the request that you recheck. A failed check stays recoverable and does not show a raw RPC response.
-- Keeps the token approval editor open when you select the requested, custom, unlimited, or revoke amount. It shows the selected allowance immediately.
-- Accepts integrity-bearing Vyper 0.4.3 `solc_json` artifacts after it checks envelope metadata and each source checksum.
-- Accepts checksummed contract addresses. A matching saved verification submission opens its existing status instead of starting another publication attempt.
-- Keeps Linux x64 qualified, Windows x64 unsigned and unqualified, and macOS x64/arm64 ad-hoc signed, unnotarized, and unqualified.
+- **Receive** shows a QR code, the full address, and **Copy address** in a small panel.
+- Portfolio totals show when prices or balances are missing or still loading.
+- Settings use five groups: **General**, **Privacy**, **Connections**, **Security**, and **Advanced**. First launch opens account setup.
+- **Send** separates account and asset fields. Progress distinguishes review, signing, submission, confirmation, and an unconfirmed broadcast.
+- Funding summaries mark rounded amounts as approximate. Select **Exact amounts** to see precise values in the same rows.
+- Reviews keep the main decision first and technical details available. Actions remain accessible in compact windows.
+- Earn keeps **Your position** visible. During a cooldown, **Deposit** opens its amount form and **Cancel cooldown** remains available.
 
-[Download Wren 0.1.7](https://github.com/jorphex/wren/releases/tag/v0.1.7). Verify the applicable `SHA256SUMS` entry and GitHub build and SBOM attestations before installation. Checksums and attestations do not create a trusted Windows or Apple publisher.
+[Download Wren 0.1.8](https://github.com/jorphex/wren/releases/tag/v0.1.8). Verify the selected file against `SHA256SUMS` and its GitHub attestation before installation.
 
 ### Wren Companion 0.1.2
 
@@ -47,11 +47,29 @@ Wren Companion `0.1.2` improves connection reliability on Etherscan, BaseScan, a
 
 [Install Wren Companion 0.1.2 from the Chrome Web Store](https://chromewebstore.google.com/detail/wren-companion/ifimccfajfbgligbhcgfapdagpnfkbhn) for Chrome or Brave. Firefox store review is pending. Use the [Companion 0.1.2 release](https://github.com/jorphex/wren-companion/releases/tag/v0.1.2) for a verified Firefox or local archive.
 
+## Wren 0.1.7
+
+Released September 4, 2026.
+
+Wren `0.1.8` supersedes this release.
+
+Wren `0.1.7` keeps transaction reviews stable during background updates. It also improves token approval changes and contract source verification.
+
+- Keeps a usable transaction review in place while Wren refreshes fees and execution checks. A failed background refresh does not replace the usable result.
+- Normalizes valid transaction quantities, including values with leading zeroes, before it sends them to an RPC endpoint.
+- Refreshes gas and fee evidence for the request that you recheck. A failed check stays recoverable and does not show a raw RPC response.
+- Keeps the token approval editor open when you select the requested, custom, unlimited, or revoke amount. It shows the selected allowance immediately.
+- Accepts integrity-bearing Vyper 0.4.3 `solc_json` artifacts after it checks envelope metadata and each source checksum.
+- Accepts checksummed contract addresses. A matching saved verification submission opens its existing status instead of starting another publication attempt.
+- Keeps Linux x64 qualified, Windows x64 unsigned and unqualified, and macOS x64/arm64 ad-hoc signed, unnotarized, and unqualified.
+
+[Download Wren 0.1.7](https://github.com/jorphex/wren/releases/tag/v0.1.7). Verify the applicable `SHA256SUMS` entry and GitHub build and SBOM attestations before installation. Checksums and attestations do not create a trusted Windows or Apple publisher.
+
 ## Wren 0.1.6
 
 Released September 3, 2026.
 
-Wren `0.1.7` supersedes this release.
+Wren `0.1.8` supersedes this release.
 
 Wren `0.1.6` makes transaction reviews clearer and restores direct access to locked accounts.
 
@@ -71,7 +89,7 @@ Wren `0.1.6` makes transaction reviews clearer and restores direct access to loc
 
 Released August 31, 2026.
 
-Wren `0.1.7` supersedes this release.
+Wren `0.1.8` supersedes this release.
 
 Wren `0.1.5` improves Activity, Control Center, wallet, and request-review workflows.
 
@@ -90,7 +108,7 @@ Wren `0.1.5` improves Activity, Control Center, wallet, and request-review workf
 
 Released August 24, 2026.
 
-Wren `0.1.7` supersedes this release.
+Wren `0.1.8` supersedes this release.
 
 Wren `0.1.4` is an urgent transaction-reliability release for Base and other recognized OP Stack networks.
 
@@ -109,7 +127,7 @@ Wren `0.1.4` is an urgent transaction-reliability release for Base and other rec
 
 Released August 22, 2026.
 
-Wren `0.1.7` supersedes this release. Upgrade before you retry an OP Stack Send that remains at **Funding check unavailable**.
+Wren `0.1.8` supersedes this release. Upgrade before you retry an OP Stack Send that remains at **Funding check unavailable**.
 
 Wren `0.1.3` adds local wallet creation and contract tools. It also makes transactions, browser connections, permissions, and restart recovery clearer and more reliable.
 

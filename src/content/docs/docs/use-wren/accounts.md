@@ -10,7 +10,7 @@ Use **Control center** → **Accounts** to add and manage accounts. Wren keeps a
 
 :::caution[Security status]
 
-Wren `0.1.7` has no independent security audit. Use test accounts with no valuable assets while you evaluate it. Review the current [signer and platform support](https://github.com/jorphex/wren/blob/main/HARDWARE_SUPPORT.md) before you rely on a hardware signer.
+Wren `0.1.8` has no independent security audit. Use test accounts with no valuable assets while you evaluate it. Review the current [signer and platform support](https://github.com/jorphex/wren/blob/main/HARDWARE_SUPPORT.md) before you rely on a hardware signer.
 
 :::
 
@@ -66,7 +66,7 @@ Wren displays the account name and a shortened address. Use **Filter accounts** 
 To manage the current account, use the controls next to its address:
 
 - Select **Copy address** to copy the full checksummed address.
-- Select **Show account address QR code** to display the address as a QR code.
+- Select **Receive** to show the QR code and full address. Select **Copy address** in the panel to copy the address.
 - Select **Update account name**, edit **Account name**, and press Enter or leave the field to save the name.
 
 You can also open the account **Settings**, select **Rename account**, and edit **Account name**. A local name stays separate from an ENS name.
@@ -76,6 +76,8 @@ Wren may display an ENS name in place of the local name when ENS data is availab
 ## Manage app access
 
 Connected-app access is stored per account. It does not grant access to every account in the profile.
+
+Open **Control center** → **Connected apps** to find accounts with app access.
 
 1. Select the account.
 2. Find **Apps with access** in the account view.
@@ -100,4 +102,4 @@ To remove one account, open that account's **Settings** module and select **Remo
 
 To remove a signer, open the signer card and select **Remove signer**. Read **Remove signer?**, then select **Remove signer**. Wren also removes accounts that depend on that signer from the profile. This action does not move funds or destroy the underlying hardware or recovery material. Make sure you have the required recovery material before confirming removal.
 
-If you must change derivation settings, use [Settings](/docs/use-wren/settings/) → **Accounts and signing**. Check each displayed address after the change.
+If you must change derivation settings, use [Settings](/docs/use-wren/settings/) → **General** → **Accounts and signing**. Check each displayed address after the change.

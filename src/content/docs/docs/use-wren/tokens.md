@@ -65,3 +65,5 @@ Curated Yearn assets and share tokens are tracked for Earn. They are not custom 
 Wren requests independent USD quotes from [DefiLlama's price API](https://coins.llama.fi) for native currencies and tracked tokens. It refreshes these quotes about every five minutes. The quote service can return no value for a token or can be temporarily unavailable.
 
 Wren does not calculate a USD value from a token name, symbol, balance, or **Logo URI**. A missing quote leaves the value unavailable. It does not mean that the asset is worth zero. USD values are display data, not a valuation or a recommendation.
+
+Portfolio totals show when balances or prices are missing or still loading. Wren does not show a partial value as a complete total.

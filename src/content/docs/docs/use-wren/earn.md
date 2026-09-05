@@ -86,6 +86,8 @@ Locked yvUSD has a cooldown and a withdrawal window. Wren reads the duration and
 4. Wait until the withdrawal window opens.
 5. Select **Withdraw** and confirm the two-step exit to USDC.
 
+During an active cooldown, **Deposit** opens its amount form. **Cancel cooldown** remains available.
+
 Earn shows **Cooldown in progress**, **Your withdrawal window is open now**, or **The previous withdrawal window closed** with the relevant times. Select **Cancel cooldown** only when you want to return cooling-down shares to the liquid locked position.
 
 ### Manage yBOLD

@@ -10,9 +10,9 @@ This page explains Wren's product boundary. It does not replace the exact protoc
 
 :::caution[Security status]
 
-Wren `0.1.7` and Wren Companion `0.1.2` are published releases. Wren has no independent security audit. Linux x64 is the qualified desktop target. Windows x64 is an unsigned, unqualified preview. macOS x64 and arm64 are ad-hoc signed, unnotarized, and unqualified previews. Use test accounts with no valuable assets until you have evaluated the releases for yourself.
+Wren `0.1.8` and Wren Companion `0.1.2` are published releases. Wren has no independent security audit. Linux x64 is the qualified desktop target. Windows x64 is an unsigned, unqualified preview. macOS x64 and arm64 are ad-hoc signed, unnotarized, and unqualified previews. Use test accounts with no valuable assets until you have evaluated the releases for yourself.
 
-Check the [Wren 0.1.7 release](https://github.com/jorphex/wren/releases/tag/v0.1.7) and [Companion 0.1.2 release](https://github.com/jorphex/wren-companion/releases/tag/v0.1.2) for the artifacts, checksums, compatibility metadata, and source-bound attestations.
+Check the [Wren 0.1.8 release](https://github.com/jorphex/wren/releases/tag/v0.1.8) and [Companion 0.1.2 release](https://github.com/jorphex/wren-companion/releases/tag/v0.1.2) for the artifacts, checksums, compatibility metadata, and source-bound attestations.
 
 :::
 
@@ -116,7 +116,7 @@ See [Manage tokens](/docs/use-wren/tokens/) and [Use Earn](/docs/use-wren/earn/)
 
 ## Backups and profile import
 
-Open **Settings** → **Recovery** to use **Export encrypted backup** or **Restore encrypted backup**. Wren encrypts the profile backup with a password that you choose. Wren cannot recover that password.
+Open **Settings** → **Security** → **Recovery** to use **Export encrypted backup** or **Restore encrypted backup**. Wren encrypts the profile backup with a password that you choose. Wren cannot recover that password.
 
 Inspect a backup before you replace the current profile. Test restoration with non-valuable accounts. Keep the backup separate from the computer that runs Wren.
 

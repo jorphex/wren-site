@@ -8,17 +8,15 @@ sidebar:
 
 Open **Control center** → **Settings** to change Wren desktop behavior, account display, signer paths, connections, recovery, and profile actions.
 
-The page contains these sections:
+Select a group to find its controls:
 
-- **Desktop behavior** controls how Wren appears, hides, starts, and reports wallet activity.
-- **Accounts and signing** controls account display, hardware derivation, relocking, and the GridPlus Lattice relay.
-- **Privacy** controls optional recent-recipient history stored on this device.
-- **Browser companions** lists paired browser companions. This section appears after you pair one.
-- **Local connections** lists authenticated local applications. This section appears after a local application pairs with Wren.
-- **Contract verification** manages an optional Etherscan API key for direct source publication.
-- **Recovery** exports or restores an encrypted Wren profile.
-- **Software signers** controls optional operating-system device protection for encrypted local signers.
-- **About** shows the instance and version information, the license, and the reset action.
+| Group | Controls |
+| --- | --- |
+| **General** | Desktop behavior, Accounts and signing, About |
+| **Privacy** | Recent-recipient history on this device |
+| **Connections** | Browser companions and local applications, shown after pairing |
+| **Security** | Recovery and Software signers |
+| **Advanced** | Contract verification |
 
 ## Desktop behavior
 
@@ -56,7 +54,7 @@ After you change a derivation option, check the displayed account and address be
 
 Wren can add optional operating-system device protection to software signer files on Linux and Windows x64. The signer password remains required. macOS does not support this protection, and software signer files remain protected only by their signer password.
 
-Use **Settings** → **Software signers** to enable, remove, or retry device protection when the operating-system credential store is available. Export a current encrypted backup before you change this setting. A protected live profile is bound to its Linux keychain or Windows user. Use an encrypted Wren backup, not a copied live profile, to move signers to another computer or user.
+Use **Settings** → **Security** → **Software signers** to enable, remove, or retry device protection when the operating-system credential store is available. Export a current encrypted backup before you change this setting. A protected live profile is bound to its Linux keychain or Windows user. Use an encrypted Wren backup, not a copied live profile, to move signers to another computer or user.
 
 ## Browser companions
 
@@ -87,7 +85,7 @@ When operating-system credential protection is available, enter a key containing
 
 The export includes accounts, names, networks, contacts, permissions, settings, and signer records. It leaves out live balances, rates, pending requests, and the Activity transaction-reference ledger.
 
-1. Under **Recovery**, select **Export backup**.
+1. Under **Security** → **Recovery**, select **Export backup**.
 2. Enter a new **Backup password** with at least eight characters. Prefer a longer, unique password.
 3. Enter the same value in **Confirm password**.
 4. Select **Choose save location**.
@@ -99,7 +97,7 @@ Wren cannot recover the backup password. Test the backup with non-valuable accou
 
 Restore replaces the current Wren profile. It does not merge profiles.
 
-1. Under **Recovery**, select **Restore backup**.
+1. Under **Security** → **Recovery**, select **Restore backup**.
 2. Enter the backup **Backup password**.
 3. Select **Choose backup to inspect**.
 4. Check the backup format, creation time, and signer record count.
@@ -109,7 +107,7 @@ Wren restarts and replaces the profile atomically. If replacement fails, Wren ke
 
 ## About and reset
 
-Under **About**:
+Under **General** → **About**:
 
 - Select the **Instance ID** to copy it.
 - Check the Wren version.

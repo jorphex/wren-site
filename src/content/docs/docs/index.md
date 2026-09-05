@@ -12,7 +12,7 @@ Wren Companion connects browser dapps to Wren on the same computer. Companion ca
 
 :::caution[Security status]
 
-Wren `0.1.7` and Wren Companion `0.1.2` are published releases. Wren has no independent security audit. Linux x64 is the qualified desktop target. Windows x64 is an unsigned, unqualified preview. macOS x64 and arm64 are ad-hoc signed, unnotarized, and unqualified previews. Use test accounts with no valuable assets while you evaluate the releases.
+Wren `0.1.8` and Wren Companion `0.1.2` are published releases. Wren has no independent security audit. Linux x64 is the qualified desktop target. Windows x64 is an unsigned, unqualified preview. macOS x64 and arm64 are ad-hoc signed, unnotarized, and unqualified previews. Use test accounts with no valuable assets while you evaluate the releases.
 
 :::
 
@@ -51,7 +51,7 @@ Read [Wren features and boundaries](/docs/features/) before you rely on a featur
 - Use the [Companion release page](https://github.com/jorphex/wren-companion/releases) for a verified local archive or Firefox package.
 - Verify release checksums and GitHub artifact attestations before installation.
 - Enter a recovery phrase or private key only in Wren's account setup. Never enter one in Companion or a dapp page.
-- Export an encrypted Wren profile backup from **Settings** → **Recovery**. Test restoration with non-valuable accounts before you rely on the backup.
+- Export an encrypted Wren profile backup from **Settings** → **Security** → **Recovery**. Test restoration with non-valuable accounts before you rely on the backup.
 - Verify the address on a hardware device when the signer supports address display. Wren's evidence labels are not security certification.
 - Report suspected vulnerabilities through the appropriate repository's [Security policy](https://github.com/jorphex/wren/blob/main/SECURITY.md), not a public issue.
 
