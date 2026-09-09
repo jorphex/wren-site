@@ -62,8 +62,12 @@ Curated Yearn assets and share tokens are tracked for Earn. They are not custom 
 
 ## USD values and missing prices
 
-Wren requests independent USD quotes from [DefiLlama's price API](https://coins.llama.fi) for native currencies and tracked tokens. It refreshes these quotes about every five minutes. The quote service can return no value for a token or can be temporarily unavailable.
+Wren requests USD quotes from DefiLlama for native currencies and tracked tokens. GeckoTerminal supplies Robinhood Chain token prices and missing quotes on Ethereum, Optimism, Gnosis, Polygon, Base, Arbitrum, and Katana.
 
-Wren does not calculate a USD value from a token name, symbol, balance, or **Logo URI**. A missing quote leaves the value unavailable. It does not mean that the asset is worth zero. USD values are display data, not a valuation or a recommendation.
+GeckoTerminal quotes use the eligible pool with the most USD liquidity. Wren checks up to 200 pools. A pool needs at least $10,000 in liquidity and trading activity in the last 24 hours. Quotes are cached for five minutes. Pool selection lasts up to 30 minutes.
 
-Portfolio totals show when balances or prices are missing or still loading. Wren does not show a partial value as a complete total.
+Requests go directly from your desktop. Price services receive your IP address, network IDs, and token IDs, but no wallet address or balance. Wren spaces requests out and resumes queued lookups after provider rate limits.
+
+Prices appear as lookups finish. If a later pool page fails, Wren keeps the best eligible quote found and retries after five minutes. If a new quote is unavailable, Wren keeps the last known value, when present. GeckoTerminal quotes do not show a 24-hour percentage change.
+
+Wren does not calculate a USD value from a token name, symbol, balance, or **Logo URI**. A missing price does not mean that an asset is worth zero. USD values are display data, not a valuation or a recommendation.

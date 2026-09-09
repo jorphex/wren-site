@@ -10,7 +10,7 @@ Use **Control center** → **Accounts** to add and manage accounts. Wren keeps a
 
 :::caution[Security status]
 
-Wren `0.1.8` has no independent security audit. Use test accounts with no valuable assets while you evaluate it. Review the current [signer and platform support](https://github.com/jorphex/wren/blob/main/HARDWARE_SUPPORT.md) before you rely on a hardware signer.
+Wren `0.1.9` has no independent security audit. Use test accounts with no valuable assets while you evaluate it. Review the current [signer and platform support](https://github.com/jorphex/wren/blob/main/HARDWARE_SUPPORT.md) before you rely on a hardware signer.
 
 :::
 
@@ -66,7 +66,7 @@ Wren displays the account name and a shortened address. Use **Filter accounts** 
 To manage the current account, use the controls next to its address:
 
 - Select **Copy address** to copy the full checksummed address.
-- Select **Receive** to show the QR code and full address. Select **Copy address** in the panel to copy the address.
+- Click **Receive** to show the QR code and full address. Select **Copy address** to copy it. Click outside the panel to close it.
 - Select **Update account name**, edit **Account name**, and press Enter or leave the field to save the name.
 
 You can also open the account **Settings**, select **Rename account**, and edit **Account name**. A local name stays separate from an ENS name.

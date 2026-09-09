@@ -10,9 +10,9 @@ This page explains Wren's product boundary. It does not replace the exact protoc
 
 :::caution[Security status]
 
-Wren `0.1.8` and Wren Companion `0.1.2` are published releases. Wren has no independent security audit. Linux x64 is the qualified desktop target. Windows x64 is an unsigned, unqualified preview. macOS x64 and arm64 are ad-hoc signed, unnotarized, and unqualified previews. Use test accounts with no valuable assets until you have evaluated the releases for yourself.
+Wren `0.1.9` and Wren Companion `0.1.2` are published releases. Wren has no independent security audit. Linux x64 is the qualified desktop target. Windows x64 is an unsigned, unqualified preview. macOS x64 and arm64 are ad-hoc signed, unnotarized, and unqualified previews. Use test accounts with no valuable assets until you have evaluated the releases for yourself.
 
-Check the [Wren 0.1.8 release](https://github.com/jorphex/wren/releases/tag/v0.1.8) and [Companion 0.1.2 release](https://github.com/jorphex/wren-companion/releases/tag/v0.1.2) for the artifacts, checksums, compatibility metadata, and source-bound attestations.
+Check the [Wren 0.1.9 release](https://github.com/jorphex/wren/releases/tag/v0.1.9) and [Companion 0.1.2 release](https://github.com/jorphex/wren-companion/releases/tag/v0.1.2) for the artifacts, checksums, compatibility metadata, and source-bound attestations.
 
 :::
 
@@ -37,7 +37,7 @@ Simulation is evidence from a configured RPC. It is not a guarantee of execution
 
 Support depends on the request and signer. Wren rejects unsupported transaction types and fields instead of silently rewriting them. Type-3 blob transactions are unsupported. EIP-5792 calls are sequential and non-atomic. Permit and SIWE support is review and consent support; Wren does not authenticate a web session or execute a permit contract for you.
 
-Permit reviews show the account, token, amount, network, spender, expiry, and signature type. Token approval reviews keep the requested, custom, unlimited, and revoke choices with the resulting allowance. The editor stays open while Wren refreshes the review. Transaction reviews group the decoded action, estimated asset changes, editable fees and nonces, contract data, and signer action. A failed background refresh does not replace a usable review result. Wallet Calls reviews show the starting nonce, maximum batch fee, and transaction fee controls.
+Permit reviews show the account, token, amount, network, spender, expiry, and signature type. Token approval reviews keep the requested, custom, unlimited, and revoke choices with the resulting allowance. The editor stays open while Wren refreshes the review. Approval and permit editors show **Your balance**. **Use balance** sets a custom allowance with full token precision. Wallet privacy hides the balance and disables this shortcut. Select **Retry** if the balance cannot be read. Transaction reviews group the decoded action, estimated asset changes, editable fees and nonces, contract data, and signer action. A failed background refresh does not replace a usable review result. Wallet Calls reviews show the starting nonce, maximum batch fee, and transaction fee controls.
 
 See [How Wren protects approvals](https://github.com/jorphex/wren/blob/main/THREAT_MODEL.md), [RPC compatibility](https://github.com/jorphex/wren/blob/main/RPC_COMPATIBILITY.md), and [supported standards](https://github.com/jorphex/wren/blob/main/SUPPORTED_EIPS.md) for the exact method boundary.
 
@@ -99,7 +99,7 @@ These labels describe project evidence. They are not security certification. Rev
 Wren has no first-party hosted backend. Its default services are explicit and replaceable.
 
 - Built-in networks use PublicNode for EVM RPC by default. The selected RPC receives your IP address and each request, which can include queried addresses, calldata, and submitted signed transactions. Choose **Custom** or **Local** for a network when you need another endpoint.
-- Wren requests USD pricing from the DefiLlama Coins API while connected networks are active.
+- Wren requests USD prices from DefiLlama and GeckoTerminal. Price requests send your IP address, network IDs, and token IDs, but no wallet address or balance. See [price coverage and refresh timing](/docs/use-wren/tokens/#usd-values-and-missing-prices).
 - The embedded Send app loads reviewed content through IPFS.io by default. Wren verifies the pinned directory CID before it activates the content.
 - The selected Earn surface requests its fixed vault catalog from Yearn Kong. It does not send account addresses, balances, or transaction details in that catalog request.
 - Token artwork comes from a reviewed CoinGecko asset host. Wren does not load arbitrary remote artwork.
