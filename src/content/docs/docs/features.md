@@ -10,9 +10,9 @@ This page explains Wren's product boundary. It does not replace the exact protoc
 
 :::caution[Security status]
 
-Wren `0.1.9` and Wren Companion `0.1.2` are published releases. Wren has no independent security audit. Linux x64 is the qualified desktop target. Windows x64 is an unsigned, unqualified preview. macOS x64 and arm64 are ad-hoc signed, unnotarized, and unqualified previews. Use test accounts with no valuable assets until you have evaluated the releases for yourself.
+Wren `0.1.10` and Wren Companion `0.1.2` are published releases. Wren has no independent security audit. Linux x64 is the qualified desktop target. Windows x64 is an unsigned, unqualified preview. macOS x64 and arm64 are ad-hoc signed, unnotarized, and unqualified previews. Use test accounts with no valuable assets until you have evaluated the releases for yourself.
 
-Check the [Wren 0.1.9 release](https://github.com/jorphex/wren/releases/tag/v0.1.9) and [Companion 0.1.2 release](https://github.com/jorphex/wren-companion/releases/tag/v0.1.2) for the artifacts, checksums, compatibility metadata, and source-bound attestations.
+Check the [Wren 0.1.10 release](https://github.com/jorphex/wren/releases/tag/v0.1.10) and [Companion 0.1.2 release](https://github.com/jorphex/wren-companion/releases/tag/v0.1.2) for the artifacts, checksums, compatibility metadata, and source-bound attestations.
 
 :::
 
@@ -76,6 +76,8 @@ Do not bypass an update warning. Use **Reset pairing** only when you expect the 
 Chrome and Brave can install Companion from the [Chrome Web Store](https://chromewebstore.google.com/detail/wren-companion/ifimccfajfbgligbhcgfapdagpnfkbhn). Firefox users can install Companion from [Firefox Add-ons](https://addons.mozilla.org/en-US/firefox/addon/wren-companion/). Verified Chrome and Firefox archives remain available from the [Companion release](https://github.com/jorphex/wren-companion/releases/tag/v0.1.2). The packages are not interchangeable. Companion has no telemetry or remote code. Read the Companion [security policy](https://github.com/jorphex/wren-companion/blob/main/SECURITY.md) and [privacy policy](https://github.com/jorphex/wren-companion/blob/main/PRIVACY.md) for its browser boundary.
 
 ## Activity details
+
+While Wren is open, it monitors direct transactions and standard token transfers for saved addresses on enabled, connected networks. Activity submitted elsewhere shows **Outside Wren**. Monitoring starts at the current chain position and resumes after reconnects. Earlier history and internal-call traces are not included.
 
 Select an Activity row to see its type, result, app, network, account, and exact times. Supported transaction entries can recover methods and transfers from transaction data and confirmed receipts. Wren uses local calldata decoding when remote metadata is unavailable. It checks the retained hash, sending account, and canonical block when available, and labels incomplete evidence instead of guessing.
 

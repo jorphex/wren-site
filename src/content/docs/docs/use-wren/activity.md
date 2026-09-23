@@ -6,7 +6,15 @@ sidebar:
   order: 2
 ---
 
-Each account has an **Activity** section. It records completed wallet requests without storing their private contents in the visible history.
+Each account has an **Activity** section. It records wallet requests and supported activity from outside Wren.
+
+## Monitor account activity
+
+Wren tracks direct transactions and standard token transfers for saved addresses on enabled, connected networks. Activity submitted elsewhere shows **Outside Wren**. Common approvals, deposits, and withdrawals have short action names.
+
+Monitoring starts at the current chain position and runs while Wren is open. Wren saves progress and resumes after reconnects and restarts. It checks for duplicates and recovers from chain reorganizations. Earlier history and internal-call traces are not included.
+
+Private alerts can appear while Wren is hidden. They omit amounts and addresses. To turn them off, open **Settings** → **General** and disable **Wallet activity notifications**.
 
 ## Open Activity details
 

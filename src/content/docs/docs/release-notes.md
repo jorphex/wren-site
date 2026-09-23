@@ -16,22 +16,23 @@ Simulation, decoded labels, and guardrails provide review evidence. They do not 
 
 ## Current releases
 
-Wren `0.1.9` was released September 9, 2026. Wren Companion `0.1.2` was released August 22, 2026.
+Wren `0.1.10` was released September 23, 2026. Wren Companion `0.1.2` was released August 22, 2026.
 
-The current compatible pair is Wren `0.1.9` with Wren Companion `0.1.2`. Version numbers do not need to match. Install Wren `0.1.9` before you install or update Companion `0.1.2`.
+The current compatible pair is Wren `0.1.10` with Wren Companion `0.1.2`. Version numbers do not need to match. Install Wren `0.1.10` before you install or update Companion `0.1.2`.
 
-### Wren 0.1.9
+### Wren 0.1.10
 
-Wren `0.1.9` adds token prices and a shortcut to set allowances. It also refines wallet navigation and reduces package size.
+Wren `0.1.10` adds activity from outside Wren and direct Firefox Companion installation links.
 
-- Approval and permit editors show **Your balance**. **Use balance** sets a custom allowance with full token precision. Wallet privacy hides the balance and disables the shortcut.
-- GeckoTerminal supplies Robinhood Chain token prices and missing quotes on seven other networks. Requests send network and token IDs, not wallet addresses or balances. See [token prices](/docs/use-wren/tokens/#usd-values-and-missing-prices).
-- Prices appear as lookups finish. Missing quotes retain the last known value, when available. Quotes without price history show no percentage change.
-- **Receive** opens on click. Click outside the panel to close it.
-- Token actions and selected controls are clearer. Portfolio totals no longer have status captions below them.
-- Updates Electron and other dependencies, removes unused packages, and reduces packaged development files.
+- Tracks direct transactions and standard token transfers for saved addresses on enabled, connected networks. Activity submitted elsewhere shows **Outside Wren**.
+- Recognizes common approvals, deposits, and withdrawals. Private alerts omit amounts and addresses while Wren is hidden.
+- Saves scan progress and resumes after reconnects and restarts. Monitoring starts at the current chain position and runs while Wren is open. Earlier history and internal-call traces are not included.
+- Opens the Firefox Add-ons listing from Control center and onboarding. Companion `0.1.2` continues to use paired protocol 3.
+- Updates Electron, React, Ledger libraries, and development tools.
 
-[Download Wren 0.1.9](https://github.com/jorphex/wren/releases/tag/v0.1.9). Verify the selected file against `SHA256SUMS` and its GitHub attestation before installation.
+See [Review Activity](/docs/use-wren/activity/) for monitoring and notification controls.
+
+[Download Wren 0.1.10](https://github.com/jorphex/wren/releases/tag/v0.1.10). Verify the selected file against `SHA256SUMS` and its GitHub attestation before installation.
 
 ### Wren Companion 0.1.2
 
@@ -46,11 +47,28 @@ Wren Companion `0.1.2` improves connection reliability on Etherscan, BaseScan, a
 
 [Install Wren Companion 0.1.2 from the Chrome Web Store](https://chromewebstore.google.com/detail/wren-companion/ifimccfajfbgligbhcgfapdagpnfkbhn) for Chrome or Brave. [Install Wren Companion for Firefox](https://addons.mozilla.org/en-US/firefox/addon/wren-companion/) from Firefox Add-ons. Use the [Companion 0.1.2 release](https://github.com/jorphex/wren-companion/releases/tag/v0.1.2) for a verified Firefox or local archive.
 
+## Wren 0.1.9
+
+Released September 9, 2026.
+
+Wren `0.1.10` supersedes this release.
+
+Wren `0.1.9` adds token prices and a shortcut to set allowances. It also refines wallet navigation and reduces package size.
+
+- Approval and permit editors show **Your balance**. **Use balance** sets a custom allowance with full token precision. Wallet privacy hides the balance and disables the shortcut.
+- GeckoTerminal supplies Robinhood Chain token prices and missing quotes on seven other networks. Requests send network and token IDs, not wallet addresses or balances. See [token prices](/docs/use-wren/tokens/#usd-values-and-missing-prices).
+- Prices appear as lookups finish. Missing quotes retain the last known value, when available. Quotes without price history show no percentage change.
+- **Receive** opens on click. Click outside the panel to close it.
+- Token actions and selected controls are clearer. Portfolio totals no longer have status captions below them.
+- Updates Electron and other dependencies, removes unused packages, and reduces packaged development files.
+
+[Download Wren 0.1.9](https://github.com/jorphex/wren/releases/tag/v0.1.9). Verify the selected file against `SHA256SUMS` and its GitHub attestation before installation.
+
 ## Wren 0.1.8
 
 Released September 5, 2026.
 
-Wren `0.1.9` supersedes this release.
+Wren `0.1.10` supersedes this release.
 
 Wren `0.1.8` uses shorter text and clearer transaction states. Full and compact windows are easier to read and use.
 
@@ -68,7 +86,7 @@ Wren `0.1.8` uses shorter text and clearer transaction states. Full and compact 
 
 Released September 4, 2026.
 
-Wren `0.1.9` supersedes this release.
+Wren `0.1.10` supersedes this release.
 
 Wren `0.1.7` keeps transaction reviews stable during background updates. It also improves token approval changes and contract source verification.
 
@@ -86,7 +104,7 @@ Wren `0.1.7` keeps transaction reviews stable during background updates. It also
 
 Released September 3, 2026.
 
-Wren `0.1.9` supersedes this release.
+Wren `0.1.10` supersedes this release.
 
 Wren `0.1.6` makes transaction reviews clearer and restores direct access to locked accounts.
 
@@ -106,7 +124,7 @@ Wren `0.1.6` makes transaction reviews clearer and restores direct access to loc
 
 Released August 31, 2026.
 
-Wren `0.1.9` supersedes this release.
+Wren `0.1.10` supersedes this release.
 
 Wren `0.1.5` improves Activity, Control Center, wallet, and request-review workflows.
 
@@ -125,7 +143,7 @@ Wren `0.1.5` improves Activity, Control Center, wallet, and request-review workf
 
 Released August 24, 2026.
 
-Wren `0.1.9` supersedes this release.
+Wren `0.1.10` supersedes this release.
 
 Wren `0.1.4` is an urgent transaction-reliability release for Base and other recognized OP Stack networks.
 
@@ -144,7 +162,7 @@ Wren `0.1.4` is an urgent transaction-reliability release for Base and other rec
 
 Released August 22, 2026.
 
-Wren `0.1.9` supersedes this release. Upgrade before you retry an OP Stack Send that remains at **Funding check unavailable**.
+Wren `0.1.10` supersedes this release. Upgrade before you retry an OP Stack Send that remains at **Funding check unavailable**.
 
 Wren `0.1.3` adds local wallet creation and contract tools. It also makes transactions, browser connections, permissions, and restart recovery clearer and more reliable.
 
