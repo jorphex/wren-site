@@ -48,7 +48,8 @@ Read [Wren features and boundaries](/docs/features/) before you rely on a featur
 
 - Download Wren only from the [Wren release page](https://github.com/jorphex/wren/releases).
 - Install Companion for Chrome or Brave from the [Chrome Web Store](https://chromewebstore.google.com/detail/wren-companion/ifimccfajfbgligbhcgfapdagpnfkbhn).
-- Use the [Companion release page](https://github.com/jorphex/wren-companion/releases) for a verified local archive or Firefox package.
+- Install Companion for Firefox from [Firefox Add-ons](https://addons.mozilla.org/en-US/firefox/addon/wren-companion/).
+- Use the [Companion release page](https://github.com/jorphex/wren-companion/releases) for a verified local archive.
 - Verify release checksums and GitHub artifact attestations before installation.
 - Enter a recovery phrase or private key only in Wren's account setup. Never enter one in Companion or a dapp page.
 - Export an encrypted Wren profile backup from **Settings** → **Security** → **Recovery**. Test restoration with non-valuable accounts before you rely on the backup.

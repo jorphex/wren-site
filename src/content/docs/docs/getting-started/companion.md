@@ -12,7 +12,7 @@ Companion is not a wallet or signer. It does not need your recovery phrase, priv
 
 :::caution[Verify the release]
 
-Install Chrome or Brave from the official Chrome Web Store listing. For Firefox or a local installation, download Wren Companion `0.1.2` only from the official GitHub release. Verify the archive, checksum, compatibility metadata, and GitHub artifact attestation.
+Install Companion from the official Chrome Web Store or Firefox Add-ons listing below. For a local installation, use the official GitHub release. Verify the archive, checksum, compatibility metadata, and GitHub artifact attestation.
 
 :::
 
@@ -31,9 +31,17 @@ Install Chrome or Brave from the official Chrome Web Store listing. For Firefox 
 
 Continue with [Compare the pairing code](#compare-the-pairing-code).
 
+## Install from Firefox Add-ons
+
+1. Open [Wren Companion on Firefox Add-ons](https://addons.mozilla.org/en-US/firefox/addon/wren-companion/).
+2. Select **Add to Firefox** and confirm the browser prompt.
+3. Open Wren Companion from the browser toolbar or extensions menu.
+
+Continue with [Compare the pairing code](#compare-the-pairing-code).
+
 ## Use a release archive
 
-Firefox store review is pending. Use a verified release archive for Firefox or when store distribution is unavailable.
+Use a verified release archive for a local installation when store distribution is unavailable.
 
 Open the [Wren Companion `v0.1.2` release](https://github.com/jorphex/wren-companion/releases/tag/v0.1.2). Download the package for your browser and the verification files:
 
@@ -81,7 +89,7 @@ Extract the ZIP into its own directory. Chrome and Firefox packages have differe
 2. Open Wren Companion from the browser toolbar.
 3. Wait for Companion to display **Pair this Companion** and a six-digit code.
 4. Wren desktop displays a connection request with its own six-digit code and the extension origin.
-5. Compare all six digits. If they differ, select **Decline**, remove the extension, and verify the archive again.
+5. Compare all six digits. If they differ, select **Decline**, remove the extension, and verify its source again.
 6. If they match and you initiated this installation, select **Accept** in Wren.
 
 After approval, Companion pins the identity of this Wren installation. Normal reconnects to that exact desktop identity do not require another code comparison.

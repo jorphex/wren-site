@@ -61,7 +61,7 @@ Enter a recovery phrase or private key only in Wren's account setup. Wren Compan
 
 [Wren Companion](/docs/getting-started/companion/) routes browser requests to Wren on the same computer. Companion is not a wallet or signer.
 
-1. Select **Chrome** to open the Chrome Web Store, or select **Firefox** to open the Companion release downloads. You can also install Companion later.
+1. Install Companion from the [Chrome Web Store](https://chromewebstore.google.com/detail/wren-companion/ifimccfajfbgligbhcgfapdagpnfkbhn) or [Firefox Add-ons](https://addons.mozilla.org/en-US/firefox/addon/wren-companion/). You can also install Companion later.
 2. Review and approve or reject each browser request in Wren.
 3. Select **Next**.
 

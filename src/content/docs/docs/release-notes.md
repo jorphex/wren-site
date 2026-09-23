@@ -44,7 +44,7 @@ Wren Companion `0.1.2` improves connection reliability on Etherscan, BaseScan, a
 - Keeps the last known network list visible during brief local disconnects or browser background restarts. It does not store accounts, requests, transactions, or page content in that list.
 - Retains EIP-1193, EIP-6963, mutually authenticated pairing protocol 3, and the pairing and page-isolation boundaries from `0.1.1`.
 
-[Install Wren Companion 0.1.2 from the Chrome Web Store](https://chromewebstore.google.com/detail/wren-companion/ifimccfajfbgligbhcgfapdagpnfkbhn) for Chrome or Brave. Firefox store review is pending. Use the [Companion 0.1.2 release](https://github.com/jorphex/wren-companion/releases/tag/v0.1.2) for a verified Firefox or local archive.
+[Install Wren Companion 0.1.2 from the Chrome Web Store](https://chromewebstore.google.com/detail/wren-companion/ifimccfajfbgligbhcgfapdagpnfkbhn) for Chrome or Brave. [Install Wren Companion for Firefox](https://addons.mozilla.org/en-US/firefox/addon/wren-companion/) from Firefox Add-ons. Use the [Companion 0.1.2 release](https://github.com/jorphex/wren-companion/releases/tag/v0.1.2) for a verified Firefox or local archive.
 
 ## Wren 0.1.8
 
