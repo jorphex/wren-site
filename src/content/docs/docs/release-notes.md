@@ -16,11 +16,41 @@ Simulation, decoded labels, and guardrails provide review evidence. They do not 
 
 ## Current releases
 
-Wren `0.1.10` was released September 23, 2026. Wren Companion `0.1.2` was released August 22, 2026.
+Wren `0.1.11` and Wren Companion `0.1.3` were released October 1, 2026.
 
-The current compatible pair is Wren `0.1.10` with Wren Companion `0.1.2`. Version numbers do not need to match. Install Wren `0.1.10` before you install or update Companion `0.1.2`.
+Use Companion `0.1.3` with Wren `0.1.11` or a later compatible desktop build. Install the desktop update first. Companion `0.1.2` remains compatible with Wren `0.1.11`.
 
-### Wren 0.1.10
+### Wren 0.1.11
+
+Wren `0.1.11` improves startup, wallet recovery, and signing.
+
+- Starts when saved RPC latency is invalid and keeps wallet and network settings.
+- Recovers failed or unresponsive wallet views.
+- Limits transaction-check time and ignores late replies after cancellation.
+- Prevents repeated **Sign** clicks during signer checks. Shows **Submitting** when sending starts.
+- Uses an enabled network for new site connections.
+- Updates Trezor USB support to Connect 10. Safe 7 signing, cancellation, and reconnect passed user testing on Linux. Model One has also been tested with Connect 10.
+
+[Download Wren 0.1.11](https://github.com/jorphex/wren/releases/tag/v0.1.11). Verify the selected file against `SHA256SUMS` and its GitHub attestation before installation.
+
+### Wren Companion 0.1.3
+
+Companion `0.1.3` makes site connection retries more reliable.
+
+- Stops connection checks after three seconds so another attempt can proceed.
+- Prevents late replies from changing a retry or its network.
+- Updates the active network after connection checks succeed.
+- Lets sites request a network change when their assigned network is disabled.
+
+Transaction and approval requests keep their existing wait behavior. Pairing protocol 3 and permissions are unchanged.
+
+Update the extension separately from Wren. The Chrome Web Store and Firefox Add-ons currently list `0.1.2`, which remains compatible. Use the verified [Companion 0.1.3 release](https://github.com/jorphex/wren-companion/releases/tag/v0.1.3) for the new retry fixes. See [Install and pair Companion](/docs/getting-started/companion/).
+
+## Wren 0.1.10
+
+Released September 23, 2026.
+
+Wren `0.1.11` supersedes this release.
 
 Wren `0.1.10` adds activity from outside Wren and direct Firefox Companion installation links.
 
@@ -34,7 +64,11 @@ See [Review Activity](/docs/use-wren/activity/) for monitoring and notification 
 
 [Download Wren 0.1.10](https://github.com/jorphex/wren/releases/tag/v0.1.10). Verify the selected file against `SHA256SUMS` and its GitHub attestation before installation.
 
-### Wren Companion 0.1.2
+## Wren Companion 0.1.2
+
+Released August 22, 2026.
+
+Companion `0.1.3` supersedes this release. Version `0.1.2` remains compatible with Wren `0.1.11`.
 
 Wren Companion `0.1.2` improves connection reliability on Etherscan, BaseScan, and other Ethereum apps.
 
@@ -51,7 +85,7 @@ Wren Companion `0.1.2` improves connection reliability on Etherscan, BaseScan, a
 
 Released September 9, 2026.
 
-Wren `0.1.10` supersedes this release.
+Wren `0.1.11` supersedes this release.
 
 Wren `0.1.9` adds token prices and a shortcut to set allowances. It also refines wallet navigation and reduces package size.
 
@@ -68,7 +102,7 @@ Wren `0.1.9` adds token prices and a shortcut to set allowances. It also refines
 
 Released September 5, 2026.
 
-Wren `0.1.10` supersedes this release.
+Wren `0.1.11` supersedes this release.
 
 Wren `0.1.8` uses shorter text and clearer transaction states. Full and compact windows are easier to read and use.
 
@@ -86,7 +120,7 @@ Wren `0.1.8` uses shorter text and clearer transaction states. Full and compact 
 
 Released September 4, 2026.
 
-Wren `0.1.10` supersedes this release.
+Wren `0.1.11` supersedes this release.
 
 Wren `0.1.7` keeps transaction reviews stable during background updates. It also improves token approval changes and contract source verification.
 
@@ -104,7 +138,7 @@ Wren `0.1.7` keeps transaction reviews stable during background updates. It also
 
 Released September 3, 2026.
 
-Wren `0.1.10` supersedes this release.
+Wren `0.1.11` supersedes this release.
 
 Wren `0.1.6` makes transaction reviews clearer and restores direct access to locked accounts.
 
@@ -124,7 +158,7 @@ Wren `0.1.6` makes transaction reviews clearer and restores direct access to loc
 
 Released August 31, 2026.
 
-Wren `0.1.10` supersedes this release.
+Wren `0.1.11` supersedes this release.
 
 Wren `0.1.5` improves Activity, Control Center, wallet, and request-review workflows.
 
@@ -143,7 +177,7 @@ Wren `0.1.5` improves Activity, Control Center, wallet, and request-review workf
 
 Released August 24, 2026.
 
-Wren `0.1.10` supersedes this release.
+Wren `0.1.11` supersedes this release.
 
 Wren `0.1.4` is an urgent transaction-reliability release for Base and other recognized OP Stack networks.
 
@@ -162,7 +196,7 @@ Wren `0.1.4` is an urgent transaction-reliability release for Base and other rec
 
 Released August 22, 2026.
 
-Wren `0.1.10` supersedes this release. Upgrade before you retry an OP Stack Send that remains at **Funding check unavailable**.
+Wren `0.1.11` supersedes this release. Upgrade before you retry an OP Stack Send that remains at **Funding check unavailable**.
 
 Wren `0.1.3` adds local wallet creation and contract tools. It also makes transactions, browser connections, permissions, and restart recovery clearer and more reliable.
 

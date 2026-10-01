@@ -18,10 +18,12 @@ Install Companion from the official Chrome Web Store or Firefox Add-ons listing 
 
 ## Before you begin
 
-- [Install Wren 0.1.10](/docs/getting-started/install/), or a later desktop release that retains protocol 3, and keep the desktop application running.
+- [Install Wren 0.1.11](/docs/getting-started/install/), or a later compatible desktop release, and keep the desktop application running.
 - Use a current Chrome, Brave, or Firefox browser.
 - Use a disposable browser profile and a test-only wallet account for the first connection.
 - Remove or disable another extension that claims to be Wren; do not pair an archive from an unofficial location.
+
+Companion `0.1.3` needs Wren `0.1.11` or a later compatible build. Update the extension separately from the desktop. Both browser stores currently list `0.1.2`, which remains compatible with Wren `0.1.11`. Use a verified release archive for the `0.1.3` retry fixes.
 
 ## Install from the Chrome Web Store
 
@@ -41,29 +43,29 @@ Continue with [Compare the pairing code](#compare-the-pairing-code).
 
 ## Use a release archive
 
-Use a verified release archive for a local installation when store distribution is unavailable.
+Use a verified release archive for Companion `0.1.3` while the browser stores list an earlier version.
 
-Open the [Wren Companion `v0.1.2` release](https://github.com/jorphex/wren-companion/releases/tag/v0.1.2). Download the package for your browser and the verification files:
+Open the [Wren Companion `v0.1.3` release](https://github.com/jorphex/wren-companion/releases/tag/v0.1.3). Download the package for your browser and the verification files:
 
-- `wren-companion-0.1.2-chrome.zip` for Chrome or Brave, or `wren-companion-0.1.2-firefox.zip` for Firefox;
-- `wren-companion-0.1.2-compatibility.json`;
+- `wren-companion-0.1.3-chrome.zip` for Chrome or Brave, or `wren-companion-0.1.3-firefox.zip` for Firefox;
+- `wren-companion-0.1.3-compatibility.json`;
 - `SHA256SUMS` from the same release.
 
 Calculate the archive hash:
 
 ```bash
-sha256sum wren-companion-0.1.2-chrome.zip
+sha256sum wren-companion-0.1.3-chrome.zip
 ```
 
 On Windows, calculate the same hash in PowerShell:
 
 ```powershell
-(Get-FileHash -Algorithm SHA256 '.\wren-companion-0.1.2-chrome.zip').Hash.ToLowerInvariant()
+(Get-FileHash -Algorithm SHA256 '.\wren-companion-0.1.3-chrome.zip').Hash.ToLowerInvariant()
 ```
 
 Use the Firefox filename instead when installing for Firefox. The calculated hash must exactly match the archive's entry in `SHA256SUMS`. Also verify the GitHub artifact attestation.
 
-Check that the compatibility file names Companion `0.1.2` and the archive that you downloaded. It must use protocol 3 and name the official Wren repository, `main` branch, and minimum desktop commit. Wren `0.1.10` satisfies that minimum. Your installed desktop commit must be the listed commit or a later commit on that branch.
+Check that the compatibility file names Companion `0.1.3` and the archive that you downloaded. It must use protocol 3 and name the official Wren repository, `main` branch, and minimum desktop commit. Wren `0.1.11` satisfies that minimum. Your installed desktop commit must be the listed commit or a later commit on that branch.
 
 Stop if the archive, checksum, compatibility metadata, repository, or attested source does not match.
 

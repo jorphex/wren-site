@@ -10,9 +10,9 @@ This page explains Wren's product boundary. It does not replace the exact protoc
 
 :::caution[Security status]
 
-Wren `0.1.10` and Wren Companion `0.1.2` are published releases. Wren has no independent security audit. Linux x64 is the qualified desktop target. Windows x64 is an unsigned, unqualified preview. macOS x64 and arm64 are ad-hoc signed, unnotarized, and unqualified previews. Use test accounts with no valuable assets until you have evaluated the releases for yourself.
+Wren `0.1.11` and Wren Companion `0.1.3` are published releases. Wren has no independent security audit. Linux x64 is the qualified desktop target. Windows x64 is an unsigned, unqualified preview. macOS x64 and arm64 are ad-hoc signed, unnotarized, and unqualified previews. Use test accounts with no valuable assets until you have evaluated the releases for yourself.
 
-Check the [Wren 0.1.10 release](https://github.com/jorphex/wren/releases/tag/v0.1.10) and [Companion 0.1.2 release](https://github.com/jorphex/wren-companion/releases/tag/v0.1.2) for the artifacts, checksums, compatibility metadata, and source-bound attestations.
+Check the [Wren 0.1.11 release](https://github.com/jorphex/wren/releases/tag/v0.1.11) and [Companion 0.1.3 release](https://github.com/jorphex/wren-companion/releases/tag/v0.1.3) for the artifacts, checksums, compatibility metadata, and source-bound attestations.
 
 :::
 
@@ -67,13 +67,15 @@ Wren Companion injects Wren's EIP-1193 provider into supported browser pages and
 
 Companion is not a wallet, signer, or approval authority. It does not need a recovery phrase, private key, keystore password, or hardware-wallet PIN. Wren desktop keeps the account permission, review, signing, and broadcast authority.
 
-Companion `0.1.2` uses mutually authenticated protocol 3. During setup, **Pair this Companion** shows a six-digit code. Compare it with the code in Wren before you select **Accept**. Select **Decline** for an unexpected request or a code mismatch. Matching codes authenticate the installations. They do not make a compromised computer or browser profile safe.
+Companion `0.1.3` uses mutually authenticated protocol 3. During setup, **Pair this Companion** shows a six-digit code. Compare it with the code in Wren before you select **Accept**. Select **Decline** for an unexpected request or a code mismatch. Matching codes authenticate the installations. They do not make a compromised computer or browser profile safe.
 
 Companion shows **Wren is unavailable** when it cannot reach the desktop. It shows **Update Wren** when the versions do not match. It shows **Wren identity changed** when the saved desktop identity changes.
 
 Do not bypass an update warning. Use **Reset pairing** only when you expect the identity change. Then compare a new code.
 
-Chrome and Brave can install Companion from the [Chrome Web Store](https://chromewebstore.google.com/detail/wren-companion/ifimccfajfbgligbhcgfapdagpnfkbhn). Firefox users can install Companion from [Firefox Add-ons](https://addons.mozilla.org/en-US/firefox/addon/wren-companion/). Verified Chrome and Firefox archives remain available from the [Companion release](https://github.com/jorphex/wren-companion/releases/tag/v0.1.2). The packages are not interchangeable. Companion has no telemetry or remote code. Read the Companion [security policy](https://github.com/jorphex/wren-companion/blob/main/SECURITY.md) and [privacy policy](https://github.com/jorphex/wren-companion/blob/main/PRIVACY.md) for its browser boundary.
+Companion `0.1.3` needs Wren `0.1.11` or a later compatible build. Update the extension separately. Both browser stores currently list `0.1.2`, which remains compatible with Wren `0.1.11`.
+
+Chrome and Brave can install Companion from the [Chrome Web Store](https://chromewebstore.google.com/detail/wren-companion/ifimccfajfbgligbhcgfapdagpnfkbhn). Firefox users can install Companion from [Firefox Add-ons](https://addons.mozilla.org/en-US/firefox/addon/wren-companion/). Verified Chrome and Firefox archives remain available from the [Companion release](https://github.com/jorphex/wren-companion/releases/tag/v0.1.3). The packages are not interchangeable. Companion has no telemetry or remote code. Read the Companion [security policy](https://github.com/jorphex/wren-companion/blob/main/SECURITY.md) and [privacy policy](https://github.com/jorphex/wren-companion/blob/main/PRIVACY.md) for its browser boundary.
 
 ## Activity details
 
@@ -92,7 +94,7 @@ Open the wallet account selector, then select **Add account**. **Choose an accou
 - **Import existing:** **Recovery phrase**, **Private key**, and **Keystore file (JSON)**. Wren stores imported local signer data in encrypted signer workers.
 - **Watch-only:** **Watch account**. It can monitor an address but cannot sign.
 
-Linux x64 is the qualified release target. Windows x64 is an unsigned, unqualified preview. macOS x64 and arm64 are ad-hoc signed, unnotarized, and unqualified previews without physical qualification. Trezor Safe 7 and Trezor Model One have current physical evidence on Linux x64, with documented Model One limitations. Ledger and GridPlus Lattice1 have implemented paths and automated coverage, but they have not been physically requalified. Other Trezor models share implementation and automated bridge coverage but have not been physically requalified. Trezor Safe 7 Bluetooth is unsupported.
+Linux x64 is the qualified release target. Windows x64 is an unsigned, unqualified preview. macOS x64 and arm64 are ad-hoc signed, unnotarized, and unqualified previews without physical qualification. Trezor Safe 7 and Model One have user-test evidence with Connect 10. Model One has documented signing limitations. Ledger and GridPlus Lattice1 have implemented paths and automated coverage, but they have not been physically requalified. Other Trezor models share implementation and automated bridge coverage but have not been physically requalified. Trezor Safe 7 Bluetooth is unsupported.
 
 These labels describe project evidence. They are not security certification. Review [Signer and platform support](https://github.com/jorphex/wren/blob/main/HARDWARE_SUPPORT.md) before you rely on a signer.
 
