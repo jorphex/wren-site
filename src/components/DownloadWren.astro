@@ -1,0 +1,29 @@
+---
+const version = '0.1.11';
+const release = `https://github.com/jorphex/wren/releases/tag/v${version}`;
+const base = `https://github.com/jorphex/wren/releases/download/v${version}/`;
+const packages = [
+  { platform: 'linux', label: 'Linux x64 · AppImage', file: `Wren-${version}.AppImage` },
+  { platform: 'linux', label: 'Linux x64 · .deb', file: `wren_${version}_amd64.deb` },
+  { platform: 'windows', label: 'Windows x64 preview', file: `Wren-Setup-${version}-unsigned-x64.exe` },
+  { platform: 'macos', label: 'macOS preview · Apple Silicon', file: `Wren-${version}-macos-arm64-unnotarized.dmg` },
+  { platform: 'macos', label: 'macOS preview · Intel', file: `Wren-${version}-macos-x64-unnotarized.dmg` },
+];
+---
+<div class="download-control" data-download-control>
+  <div class="download-buttons">
+    <a class="button button-primary" data-download-primary hidden href={base + packages[0].file}>Download {version}</a>
+    <details class="download-choices">
+      <summary class="button button-primary" data-download-summary>Download {version} <span aria-hidden="true">▾</span></summary>
+      <div class="download-panel">
+        {packages.map((item) => (
+          <a href={base + item.file} data-download-platform={item.platform}>{item.label}</a>
+        ))}
+      </div>
+    </details>
+  </div>
+  <div class="download-help">
+    <a href={release} target="_blank" rel="noopener noreferrer">Release notes</a>
+    <a href="/docs/getting-started/install/#download-and-verify-wren">Verify download</a>
+  </div>
+</div>

@@ -241,6 +241,7 @@ h1 {
 
 .actions {
   display: flex;
+  align-items: flex-start;
   flex-wrap: wrap;
   gap: 12px;
   margin-top: 34px;
@@ -839,4 +840,66 @@ footer {
   *::after {
     transition-duration: 1ms !important;
   }
+}
+
+.download-control {
+  min-width: 0;
+}
+
+.download-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.download-control [hidden] {
+  display: none;
+}
+
+.download-choices {
+  position: relative;
+}
+
+.download-choices summary {
+  list-style: none;
+  cursor: pointer;
+}
+
+.download-choices summary::-webkit-details-marker {
+  display: none;
+}
+
+.download-panel {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  z-index: 10;
+  width: max-content;
+  max-width: calc(100vw - 32px);
+  padding: 6px;
+  border: 1px solid var(--text-muted);
+  background: #070907;
+}
+
+.download-panel a {
+  display: block;
+  padding: 12px;
+  color: var(--text-secondary);
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.download-panel a:hover,
+.download-panel a:focus-visible {
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.download-help {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 10px;
+  font-size: 12px;
+  color: var(--text-muted);
 }
