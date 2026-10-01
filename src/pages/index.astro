@@ -391,7 +391,30 @@ const hasCompleteLatestCommits = latestCommits.every(
           const choices = control.querySelector("details");
           const summary = control.querySelector("[data-download-summary]");
           const links = [...control.querySelectorAll("[data-download-platform]")];
-          const close = () => { choices.open = false; };
+          const buttons = control.querySelector(".download-buttons");
+          const hover = window.matchMedia("(hover: hover) and (pointer: fine)");
+          let closeTimer;
+          const close = () => {
+            clearTimeout(closeTimer);
+            choices.open = false;
+          };
+          const openOnHover = (event) => {
+            if (!hover.matches || event.pointerType !== "mouse" || choices.hidden) return;
+            clearTimeout(closeTimer);
+            choices.open = true;
+          };
+          buttons.addEventListener("pointerenter", openOnHover);
+          control.querySelector(".download-panel").addEventListener("pointerenter", openOnHover);
+          buttons.addEventListener("pointerleave", (event) => {
+            if (!hover.matches || event.pointerType !== "mouse") return;
+            closeTimer = setTimeout(close, 180);
+          });
+          summary.addEventListener("click", (event) => {
+            if (hover.matches && event.detail > 0) {
+              event.preventDefault();
+              choices.open = true;
+            }
+          });
 
           if (detected !== "unknown") {
             links.forEach((link) => { link.hidden = link.dataset.downloadPlatform !== detected; });
@@ -404,8 +427,9 @@ const hasCompleteLatestCommits = latestCommits.every(
             primary.hidden = false;
             if (detected === "windows") choices.hidden = true;
             else {
-              summary.classList.replace("button-primary", "button-secondary");
-              summary.innerHTML = 'Packages <span aria-hidden="true">▾</span>';
+              control.classList.add("download-split");
+              summary.setAttribute("aria-label", "Choose Linux package");
+              summary.innerHTML = '<span aria-hidden="true">▾</span>';
             }
           } else if (detected === "macos") {
             summary.innerHTML = 'Get 0.1.11 macOS preview <span aria-hidden="true">▾</span>';

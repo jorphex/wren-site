@@ -847,9 +847,10 @@ footer {
 }
 
 .download-buttons {
+  position: relative;
   display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
+  width: fit-content;
+  gap: 0;
 }
 
 .download-control [hidden] {
@@ -857,7 +858,19 @@ footer {
 }
 
 .download-choices {
-  position: relative;
+  position: static;
+}
+
+.download-split [data-download-primary] {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.download-split summary {
+  padding: 0 14px;
+  border-left-color: rgba(18, 21, 15, 0.25);
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
 }
 
 .download-choices summary {
