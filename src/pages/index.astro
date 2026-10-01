@@ -412,7 +412,8 @@ const hasCompleteLatestCommits = latestCommits.every(
           summary.addEventListener("click", (event) => {
             if (hover.matches && event.detail > 0) {
               event.preventDefault();
-              choices.open = true;
+              if (detected === "linux") window.location.assign(primary.href);
+              else choices.open = true;
             }
           });
 
@@ -424,15 +425,14 @@ const hasCompleteLatestCommits = latestCommits.every(
             primary.textContent = detected === "linux"
               ? "Download 0.1.11 for Linux"
               : "Get 0.1.11 Windows preview";
-            primary.hidden = false;
-            if (detected === "windows") choices.hidden = true;
-            else {
-              control.classList.add("download-split");
-              summary.setAttribute("aria-label", "Choose Linux package");
-              summary.innerHTML = '<span aria-hidden="true">▾</span>';
+            if (detected === "windows") {
+              primary.hidden = false;
+              choices.hidden = true;
+            } else {
+              summary.textContent = primary.textContent;
             }
           } else if (detected === "macos") {
-            summary.innerHTML = 'Get 0.1.11 macOS preview <span aria-hidden="true">▾</span>';
+            summary.textContent = "Get 0.1.11 macOS preview";
           }
 
           document.addEventListener("click", (event) => {

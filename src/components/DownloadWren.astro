@@ -14,7 +14,7 @@ const packages = [
   <div class="download-buttons">
     <a class="button button-primary" data-download-primary hidden href={base + packages[0].file}>Download {version}</a>
     <details class="download-choices">
-      <summary class="button button-primary" data-download-summary>Download {version} <span aria-hidden="true">▾</span></summary>
+      <summary class="button button-primary" data-download-summary>Download {version}</summary>
       <div class="download-panel">
         {packages.map((item) => (
           <a href={base + item.file} data-download-platform={item.platform}>{item.label}</a>
